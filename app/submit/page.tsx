@@ -2,8 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Palette, AlertCircle, Calendar, Users, Target, Edit, UserCheck, FileText, CheckCircle, Tag, Phone } from "lucide-react"
+import { Palette, Calendar, Users, Target, Edit, UserCheck, FileText, CheckCircle, Tag, Phone } from "lucide-react"
 import Link from "next/link"
 
 export default function SubmitPage() {

@@ -164,7 +164,7 @@ export default function PlaquePage() {
               </div>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-black mb-6 uppercase">Elementi dell'Etichetta</h3>
+                  <h3 className="text-2xl font-black mb-6 uppercase">Elementi Etichetta</h3>
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center flex-shrink-0 font-black text-sm">

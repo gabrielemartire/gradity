@@ -251,14 +251,14 @@ export default function VerifyPage() {
               VERIFICA OPERA
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Inserisci il codice dell'opera o scansiona il QR code per verificare l'autenticità
+              Inserisci codice opera o scansiona QR code per verificare autenticità
             </p>
           </div>
 
           {/* Search Section */}
           <Card className="mb-8 border-0 bg-white/80 backdrop-blur-sm shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">Inserisci Codice di Verifica</CardTitle>
+              <CardTitle className="text-2xl text-center mt-2">Inserisci Codice di Verifica</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
