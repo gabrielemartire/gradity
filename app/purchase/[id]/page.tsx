@@ -10,7 +10,7 @@ import { Palette, CreditCard, ExternalLink, Shield, Truck, ArrowLeft } from "luc
 import Image from "next/image"
 import Link from "next/link"
 
-export default function PurchasePage({ params }: { params: { id: string } }) {
+export default function PurchasePage() {
   const [purchaseMethod, setPurchaseMethod] = useState<"direct" | "vinted" | null>(null)
   const [paymentData, setPaymentData] = useState({
     cardNumber: "",
@@ -337,8 +337,7 @@ export default function PurchasePage({ params }: { params: { id: string } }) {
                         <div>
                           <h3 className="text-2xl font-black mb-4 uppercase">Verrai reindirizzato a Vinted</h3>
                           <p className="text-gray-600 font-medium mb-6">
-                            Completerai l'acquisto sulla piattaforma Vinted con tutte le protezioni per l'acquirente
-                            incluse.
+                            Acquista sulla piattaforma Vinted con tutte le protezioni per l'acquirente incluse.
                           </p>
                         </div>
                         <div className="bg-gray-50 p-6 border-2 border-gray-200">

@@ -8,11 +8,13 @@ import {
   Shield,
   Clock,
   Users,
-  Edit,
-  UserCheck,
-  FileText,
+  Instagram,
+  Vault,
+  Forward,
+  Mail,
   CheckCircle,
-  Tag,
+  GalleryHorizontalEnd,
+  Euro,
   Phone,
 } from "lucide-react"
 import Image from "next/image"
@@ -22,7 +24,7 @@ export default function HomePage() {
   const currentCollection = {
     name: "Autunno 2025",
     description: "35 opere esclusive selezionate per la stagione autunnale",
-    totalWorks: 35,
+    totalWorks: 8,
     available: 2,
     endDate: "8 Dicembre 2025",
   }
@@ -101,16 +103,16 @@ export default function HomePage() {
                 La Placca
               </Link>
               <Link
-                href="/about"
-                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
-              >
-                Chi Siamo
-              </Link>
-              <Link
                 href="/verify"
                 className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
               >
                 Verifica
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
+              >
+                Chi Siamo
               </Link>
               <Link href="/submit">
                 <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 font-bold uppercase tracking-wide">
@@ -136,7 +138,7 @@ export default function HomePage() {
             CERTIFICATA
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Opere d'arte pop esclusive, sigillate e certificate. Solo {currentCollection.totalWorks} pezzi per
+            Opere artistiche pop esclusive, sigillate e certificate. Solo {currentCollection.totalWorks} pezzi per
             collezione.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -281,7 +283,7 @@ export default function HomePage() {
               </div>
               <h4 className="text-xl font-bold mb-4">Verifica Immediata</h4>
               <p className="text-gray-600">
-                Sistema di verifica tramite codice o QR code per controllare istantaneamente l'autenticità dell'opera.
+                Sistema di verifica opera tramite codice di autenticità.
               </p>
             </div>
           </div>
@@ -315,7 +317,7 @@ export default function HomePage() {
                 </div>
                 <span className="text-xl font-bold">gradity</span>
               </div>
-              <p className="text-gray-400">La piattaforma per l'arte pop certificata e collezionabile.</p>
+              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
               <h5 className="font-bold mb-4">Collezioni</h5>
@@ -366,60 +368,60 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h5 className="font-bold mb-4">l'Arte</h5>
+              <h5 className="font-bold mb-4">Arte</h5>
               <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <Link href="/submit" className="group-hover:text-lg transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="/gallery" className="group-hover:text-lg transition-all duration-200">
                     Galleria
                   </Link>
-                  <Edit className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <GalleryHorizontalEnd className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <Link href="/about" className="group-hover:text-lg transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="/verify" className="group-hover:text-lg transition-all duration-200">
                     Verifica
                   </Link>
-                  <UserCheck className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <CheckCircle className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <Link href="/plaque" className="group-hover:text-lg transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="/submit" className="group-hover:text-lg transition-all duration-200">
                     Proponi Opera
                   </Link>
-                  <FileText className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <Forward className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
                   <Link href="/plaque" className="group-hover:text-lg transition-all duration-200">
                     la Placca
                   </Link>
-                  <FileText className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <Vault className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
               </ul>
             </div>
             <div>
               <h5 className="font-bold mb-4">Supporto</h5>
               <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <Link href="/verify" className="group-hover:text-lg transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
                     Contattaci
                   </Link>
-                  <CheckCircle className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <Mail className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <Link href="/plaque" className="group-hover:text-lg transition-all duration-200">
-                    Chi siamo?
-                  </Link>
-                  <Tag className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
                   <Link href="/about" className="group-hover:text-lg transition-all duration-200">
+                    Chi siamo
+                  </Link>
+                  <Users className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </li>
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
                     Acquista su Vinted
                   </Link>
-                  <Phone className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <Euro className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <Link href="/about" className="group-hover:text-lg transition-all duration-200">
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
                     Instagram
                   </Link>
-                  <Phone className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <Instagram className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
               </ul>
             </div>

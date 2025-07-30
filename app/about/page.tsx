@@ -90,7 +90,7 @@ export default function AboutPage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">SIAMO</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span> è la prima piattaforma che certifica e preserva l'arte pop contemporanea attraverso un sistema di
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span> è la prima piattaforma che certifica e preserva arte pop contemporanea attraverso un sistema di
             sigillatura innovativo e collezioni esclusive.
           </p>
         </div>
@@ -105,8 +105,8 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-3xl font-black mb-6 uppercase">Rivoluzionare il Collezionismo</h3>
                 <p className="text-lg text-gray-700 mb-6 font-medium leading-relaxed">
-                  Crediamo che ogni opera d'arte meriti di essere preservata e certificata. Il nostro sistema di
-                  sigillatura in placche trasparenti garantisce l'autenticità e la conservazione nel tempo.
+                  Crediamo che ogni opera artistica meriti di essere preservata e certificata. Il nostro sistema di
+                  sigillatura in placche trasparenti garantisce autenticità e conservazione nel tempo.
                 </p>
                 <p className="text-lg text-gray-700 font-medium leading-relaxed">
                   Selezioniamo solo le migliori opere pop contemporanee, creando collezioni esclusive e limitate che
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 </div>
                 <span className="text-xl font-bold">Vault Art</span>
               </div>
-              <p className="text-gray-400">La piattaforma per l'arte pop certificata e collezionabile.</p>
+              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
               <h5 className="font-bold mb-4">Collezioni</h5>

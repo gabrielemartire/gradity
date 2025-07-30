@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Palette, Shield, QrCode, Eye, Lock, Zap, CheckCircle, Tag, Phone, UserCheck, Edit, FileText } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 
 export default function PlaquePage() {
@@ -62,7 +61,7 @@ export default function PlaquePage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">PLACCA</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
-            Il sistema di certificazione più avanzato per l'arte contemporanea. Ogni opera è sigillata, protetta e
+            Il sistema di certificazione più avanzato per arte contemporanea. Ogni opera è sigillata, protetta e
             verificabile per sempre.
           </p>
         </div>
@@ -82,7 +81,7 @@ export default function PlaquePage() {
                       <div>
                         <h4 className="font-black text-lg mb-2 uppercase">Materiale Premium</h4>
                         <p className="text-gray-700 font-medium">
-                          Plastica trasparente di grado museale, resistente ai raggi UV e all'invecchiamento
+                          Plastica trasparente di grado museale, resistente a raggi UV e invecchiamento
                         </p>
                       </div>
                     </div>
@@ -93,7 +92,7 @@ export default function PlaquePage() {
                       <div>
                         <h4 className="font-black text-lg mb-2 uppercase">Sigillatura Permanente</h4>
                         <p className="text-gray-700 font-medium">
-                          Sistema di sigillatura a caldo che garantisce l'integrità dell'opera nel tempo
+                          Sistema di sigillatura a caldo che garantisce integrità nel tempo
                         </p>
                       </div>
                     </div>
@@ -104,7 +103,7 @@ export default function PlaquePage() {
                       <div>
                         <h4 className="font-black text-lg mb-2 uppercase">Visibilità Totale</h4>
                         <p className="text-gray-700 font-medium">
-                          Trasparenza cristallina che permette di ammirare l'opera senza compromessi
+                          Trasparenza cristallina che permette di ammirare opere senza compromessi
                         </p>
                       </div>
                     </div>
@@ -132,7 +131,7 @@ export default function PlaquePage() {
         {/* Label Reading Guide */}
         <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
           <CardHeader className="bg-black text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">Come Leggere l'Etichetta</CardTitle>
+            <CardTitle className="text-3xl font-black uppercase tracking-wide">Etichetta, come leggerla?</CardTitle>
           </CardHeader>
           <CardContent className="p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -146,8 +145,8 @@ export default function PlaquePage() {
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-black mb-2">AUT25-001</div>
-                        <div className="text-lg font-bold">NEON DREAMS</div>
-                        <div className="text-gray-600">Marco Rossi</div>
+                        <div className="text-lg font-bold">TWIN PEAKS</div>
+                        <div className="text-gray-600">Dale Cooper</div>
                       </div>
                       <div className="border-t pt-2 space-y-1 text-xs">
                         <div>Collezione: Autunno 2025</div>
@@ -203,7 +202,7 @@ export default function PlaquePage() {
                       <div>
                         <h4 className="font-black text-lg mb-2 uppercase">QR Code di Verifica</h4>
                         <p className="text-gray-700 font-medium">
-                          Codice scansionabile per verifica istantanea dell'autenticità
+                          Codice scansionabile per verifica autenticità
                         </p>
                       </div>
                     </div>
@@ -236,7 +235,7 @@ export default function PlaquePage() {
                 </div>
                 <h4 className="text-xl font-black mb-4 uppercase">Protezione UV</h4>
                 <p className="text-gray-700 font-medium">
-                  Materiale speciale che protegge l'opera dai raggi ultravioletti
+                  Materiale speciale che protegge opere dai raggi ultravioletti
                 </p>
               </div>
               <div className="text-center p-6 border-2 border-black">
@@ -245,7 +244,7 @@ export default function PlaquePage() {
                 </div>
                 <h4 className="text-xl font-black mb-4 uppercase">Verifica Istantanea</h4>
                 <p className="text-gray-700 font-medium">
-                  QR code collegato al database per verifica immediata dell'autenticità
+                  QR code collegato al database per autenticità opera
                 </p>
               </div>
             </div>
@@ -265,7 +264,7 @@ export default function PlaquePage() {
                 </div>
                 <h4 className="text-lg font-black mb-4 uppercase">Preparazione</h4>
                 <p className="text-gray-700 font-medium text-sm">
-                  L'opera viene ispezionata e preparata per la sigillatura
+                  Le opere vengono ispezionate e preparate per la sigillatura
                 </p>
               </div>
               <div className="text-center">
@@ -274,7 +273,7 @@ export default function PlaquePage() {
                 </div>
                 <h4 className="text-lg font-black mb-4 uppercase">Etichettatura</h4>
                 <p className="text-gray-700 font-medium text-sm">
-                  Viene applicata l'etichetta con codice univoco e QR code
+                  Vengono applicate etichetta con codice univoco e QR code
                 </p>
               </div>
               <div className="text-center">
@@ -327,7 +326,7 @@ export default function PlaquePage() {
                 </div>
                 <span className="text-xl font-bold">Vault Art</span>
               </div>
-              <p className="text-gray-400">La piattaforma per l'arte pop certificata e collezionabile.</p>
+              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
               <h5 className="font-bold mb-4">Collezioni</h5>

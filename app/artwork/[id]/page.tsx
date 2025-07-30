@@ -163,7 +163,7 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-black mb-4">Opera Non Trovata</h1>
-          <p className="text-gray-600 mb-8">L'opera che stai cercando non esiste.</p>
+          <p className="text-gray-600 mb-8">Questa opera artistica che stai cercando non esiste.</p>
           <Link href="/gallery">
             <Button className="bg-gradient-to-r from-purple-600 to-pink-600">
               Torna alla Galleria
@@ -413,7 +413,7 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
                     <Link href={`/auction/${artwork.id}`} className="flex-1">
                       <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-600 font-black uppercase text-lg py-4">
                         <span className="mr-2">⚡</span>
-                        Partecipa all'Asta
+                        Asta
                       </Button>
                     </Link>
                   )}
@@ -496,7 +496,7 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
                 </div>
                 <span className="text-xl font-bold">Vault Art</span>
               </div>
-              <p className="text-gray-400">La piattaforma per l'arte pop certificata e collezionabile.</p>
+              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
               <h5 className="font-bold mb-4">Collezioni</h5>

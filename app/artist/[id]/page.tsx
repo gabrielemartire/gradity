@@ -5,7 +5,7 @@ import { Palette, Instagram, Twitter, Globe, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function ArtistPage({ params }: { params: { id: string } }) {
+export default function ArtistPage() {
   // Mock artist data
   const artist = {
     id: "marco-rossi",
@@ -223,7 +223,7 @@ export default function ArtistPage({ params }: { params: { id: string } }) {
 
           {/* Artworks */}
           <div>
-            <h2 className="text-4xl font-black mb-12 uppercase">Opere dell'Artista</h2>
+            <h2 className="text-4xl font-black mb-12 uppercase">Opere Artista</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {artist.artworks.map((artwork) => (
                 <Card
