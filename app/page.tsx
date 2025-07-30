@@ -90,12 +90,6 @@ export default function HomePage() {
                 Galleria
               </Link>
               <Link
-                href="/collections"
-                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
-              >
-                Collezioni
-              </Link>
-              <Link
                 href="/plaque"
                 className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
               >
@@ -319,9 +313,9 @@ export default function HomePage() {
               <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
-              <h5 className="font-bold mb-4">Collezioni</h5>
+              <h5 className="font-bold mb-4">Ultime Collezioni</h5>
               <ul className="space-y-2 text-gray-400">
-                                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
+                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-gradient-to-r from-yellow-500 to-orange-600"></div>
                     <Link href="/gallery?collection=EST-2025" className="group-hover:text-lg transition-all duration-200">
@@ -356,14 +350,6 @@ export default function HomePage() {
                     </Link>
                   </div>
                 </li> 
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gray-500"></div>
-                    <Link href="/collections" className="group-hover:text-lg transition-all duration-200">
-                      Archivio Completo
-                    </Link>
-                  </div>
-                </li>
               </ul>
             </div>
             <div>

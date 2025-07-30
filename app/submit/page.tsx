@@ -76,7 +76,7 @@ export default function SubmitPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
               PROPONI
               <br />
@@ -128,7 +128,7 @@ export default function SubmitPage() {
                 </div>
               </div> */}
                 <div className="text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white p-8 mb-8">
-                  <h4 className="text-4xl font-black mb-4">{currentSeason.name}</h4>
+                  <h4 className="text-4xl font-black">{currentSeason.name}</h4>
                 </div>
               <div className="text-center grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-black text-white p-6">
