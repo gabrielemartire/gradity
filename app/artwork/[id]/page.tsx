@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Palette, ArrowLeft, Share2, Heart, ShoppingCart, CheckCircle, Tag, Phone, FileText, UserCheck, Edit, Mail, Users, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { Palette, ArrowLeft, Share2, Heart, ShoppingCart, CheckCircle, Mail, Users, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
