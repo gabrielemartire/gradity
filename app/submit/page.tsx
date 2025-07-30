@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Palette, Calendar, Users, Target, Edit, UserCheck, FileText, CheckCircle, Tag, Phone, Instagram, Euro, Mail, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { Palette, Calendar, Users, Target, CheckCircle, Instagram, Euro, Mail, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
 import Link from "next/link"
 
 export default function SubmitPage() {

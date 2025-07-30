@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { QrCode, Search, CheckCircle, XCircle, Palette, Tag, Instagram, Euro, Users, Mail, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { QrCode, Search, CheckCircle, XCircle, Palette, Instagram, Euro, Users, Mail, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 

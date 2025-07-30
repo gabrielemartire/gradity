@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Palette, Shield, Users, Award, Zap, CheckCircle, FileText, UserCheck, Edit, Phone, Tag, Mail, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { Palette, Shield, Users, Award, Zap, CheckCircle, Mail, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 

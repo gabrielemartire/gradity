@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Palette, Search, Grid, List, CheckCircle, Tag, Phone, FileText, UserCheck, Edit, Users, Mail, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { Palette, Search, Grid, List, CheckCircle, Users, Mail, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 

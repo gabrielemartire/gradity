@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Palette, Shield, QrCode, Eye, Lock, Zap, CheckCircle, Tag, Phone, UserCheck, Edit, FileText, Users, Mail, Euro, Instagram, Forward, Vault, GalleryHorizontalEnd } from "lucide-react"
+import { Palette, Shield, QrCode, Eye, Lock, Zap, CheckCircle, Users, Mail, Euro, Instagram, Forward, Vault, GalleryHorizontalEnd } from "lucide-react"
 import Link from "next/link"
 
 export default function PlaquePage() {
