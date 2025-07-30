@@ -11,7 +11,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function ArtworkPage({ params }: { params: { id: string } }) {
-  const [isLiked, setIsLiked] = useState(false)
   const imageRef = useRef<HTMLDivElement>(null)
 
   // Artworks database
@@ -419,10 +418,9 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
                   )}
                   <Button
                     variant="outline"
-                    onClick={() => setIsLiked(!isLiked)}
-                    className={`border-2 border-black bg-transparent px-6 ${isLiked ? "bg-red-50 text-red-600" : ""}`}
+                    className={`border-2 border-black bg-transparent px-6 bg-red-50 text-red-600"`}
                   >
-                    <Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
+                    <Heart className={`w-5 h-5 fill-current"`} />
                   </Button>
                   <Button variant="outline" onClick={handleShare} className="border-2 border-black bg-transparent px-6">
                     <Share2 className="w-5 h-5" />
