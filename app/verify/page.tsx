@@ -430,7 +430,7 @@ export default function VerifyPage() {
                     <span className="text-white font-bold text-xl">3</span>
                   </div>
                   <h4 className="font-bold mb-2">Verifica Istantanea</h4>
-                  <p className="text-gray-600 text-sm">Ottieni immediatamente tutte le informazioni sull'opera</p>
+                  <p className="text-gray-600 text-sm">Ottieni immediatamente tutte le informazioni riguardo il prodotto artistico</p>
                 </div>
               </div>
             </CardContent>

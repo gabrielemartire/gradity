@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -166,7 +165,7 @@ export default function UploadPage() {
                     </a>
                     <div className="bg-white/20 p-4 rounded-lg">
                       <p className="text-sm font-medium">
-                        Il modulo include tutti i campi necessari per la valutazione: informazioni sull'opera, upload
+                        Il modulo include tutti i campi necessari per la valutazione: informazioni riguardo la proposta artistica, upload
                         file, dati artista e dichiarazioni di originalità.
                       </p>
                     </div>

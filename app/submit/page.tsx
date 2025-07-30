@@ -281,7 +281,7 @@ export default function SubmitPage() {
                 </div>
                 <span className="text-xl font-bold">Vault Art</span>
               </div>
-              <p className="text-gray-400">La piattaforma per l'arte pop certificata e collezionabile.</p>
+              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
               <h5 className="font-bold mb-4">Collezioni</h5>
