@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,8 +10,25 @@ import { Palette, ArrowLeft, Share2, Heart, ShoppingCart, CheckCircle, Tag, Phon
 import Image from "next/image"
 import Link from "next/link"
 
-export default function ArtworkPage({ params }: { params: { id: string } }) {
+// Define proper types for the component props
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+export default function ArtworkPage({ params }: PageProps) {
   const imageRef = useRef<HTMLDivElement>(null)
+  const [artworkId, setArtworkId] = useState<string>("")
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Resolve the params Promise
+  useEffect(() => {
+    const resolveParams = async () => {
+      const resolvedParams = await params
+      setArtworkId(resolvedParams.id)
+      setIsLoading(false)
+    }
+    resolveParams()
+  }, [params])
 
   // Artworks database
   const artworks = [
@@ -153,8 +170,20 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
     },
   ]
 
+  // Show loading state while resolving params
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Caricamento...</p>
+        </div>
+      </div>
+    )
+  }
+
   // Find artwork by ID
-  const artwork = artworks.find(art => art.id === params.id)
+  const artwork = artworks.find(art => art.id === artworkId)
 
   // Handle case when artwork is not found
   if (!artwork) {
@@ -179,22 +208,22 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
     
     switch (artistName) {
       case "Aroha Te Ao":
-        avatar = "https://plus.unsplash.com/premium_photo-1675034393635-ae45492f9be6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Leave blank for you to populate
+        avatar = "https://plus.unsplash.com/premium_photo-1675034393635-ae45492f9be6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         break
       case "Rongo Pikiatua":
-        avatar = "https://images.unsplash.com/photo-1529758146491-1e11fd721f77?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Leave blank for you to populate
+        avatar = "https://images.unsplash.com/photo-1529758146491-1e11fd721f77?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         break
       case "Teika Moanaroa":
-        avatar = "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Leave blank for you to populate
+        avatar = "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         break
       case "Te Rerehua Wikitōria":
-        avatar = "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Leave blank for you to populate
+        avatar = "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         break
       case "Mereana Kauri":
-        avatar = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Leave blank for you to populate
+        avatar = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         break
       case "Hinemoana Raukura":
-        avatar = "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Leave blank for you to populate
+        avatar = "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         break
       default:
         avatar = "/placeholder.svg?height=100&width=100"
@@ -259,7 +288,7 @@ export default function ArtworkPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="min-h-screen bg-white">
-{/* Header */}
+      {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">

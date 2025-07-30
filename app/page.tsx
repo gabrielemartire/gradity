@@ -403,7 +403,7 @@ export default function HomePage() {
                   <Euro className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
                 <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
+                  <Link href="https://www.instagram.com/gradity_art/" target="_blank" className="group-hover:text-lg transition-all duration-200">
                     Instagram
                   </Link>
                   <Instagram className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
