@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge"
 import {
   Search,
   QrCode,
-  Palette,
   Shield,
   Clock,
   Users,
