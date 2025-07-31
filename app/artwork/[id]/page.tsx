@@ -6,9 +6,12 @@ import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Palette, ArrowLeft, Share2, Heart, ShoppingCart, CheckCircle, Mail, Users, Euro, Instagram, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { Share2, Heart, ShoppingCart } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import artworks_db from "@/db/artworks"
+import Header from "@/app/header"
+import Footer from "@/app/footer"
 
 // Define proper types for the component props
 interface PageProps {
@@ -31,144 +34,8 @@ export default function ArtworkPage({ params }: PageProps) {
   }, [params])
 
   // Artworks database
-  const artworks = [
-    {
-      id: "AUT25-001",
-      title: "Te Manu o te Rangi",
-      artist: "Aroha Te Ao",
-      status: "available",
-      price: 45,
-      collection: "Autunno 2025",
-      description: "'L'uccello del cielo' in maori, evocando un volatile sacro, forse un kererū o un falco nativo.",
-      image: "https://images.unsplash.com/photo-1747945872974-4d814f768def?q=80&w=963&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "12 Settembre 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["maori", "uccelli", "sacro", "natura", "tradizionale"],
-      likes: 89,
-      views: 1245,
-    },
-    {
-      id: "AUT25-007",
-      title: "Moana Kōtare",
-      artist: "Rongo Pikiatua",
-      status: "sold",
-      price: 45,
-      collection: "Autunno 2025",
-      description: "Martin pescatore dell'oceano — un tributo all'avifauna costiera delle isole del Pacifico.",
-      image: "https://images.unsplash.com/photo-1709805902570-fcb5c9d99d5e?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "18 Settembre 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["oceano", "martin pescatore", "pacifico", "costiero", "blu"],
-      likes: 156,
-      views: 2103,
-    },
-    {
-      id: "AUT25-012",
-      title: "Whakarere Kārearea",
-      artist: "Teika Moanaroa",
-      price: 45,
-      collection: "Autunno 2025",
-      description: "Il volo del falco della Nuova Zelanda — un'immagine dinamica del kārearea, il falco nativo Aotearoa.",
-      status: "sold",
-      image: "https://images.unsplash.com/photo-1709802191476-5a417cb6b971?q=80&w=950&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "22 Settembre 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["falco", "volo", "dinamico", "nuova zelanda", "nativo"],
-      likes: 203,
-      views: 1876,
-    },
-    {
-      id: "AUT25-018",
-      title: "Tūī Karanga",
-      artist: "Te Rerehua Wikitōria",
-      price: 45,
-      collection: "Autunno 2025",
-      description: "Il canto del tūī — uccello iconico noto per il suo verso armonioso e il piumaggio iridescente.",
-      status: "available",
-      image: "https://images.unsplash.com/photo-1709235175253-d6c1892e1d39?q=80&w=997&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "25 Settembre 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["tui", "canto", "armonioso", "iridescente", "iconico"],
-      likes: 134,
-      views: 1654,
-    },
-    {
-      id: "SPR25-001",
-      title: "Piko o te Māra",
-      artist: "Mereana Kauri",
-      status: "sold",
-      price: 45,
-      collection: "Estate 2025",
-      description: "Spirali del giardino — un riferimento alle felci arrotolate (piko) e alla simbologia della nuova vita.",
-      image: "https://images.unsplash.com/photo-1515096788709-a3cf4ce0a4a6?q=80&w=3158&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "5 Marzo 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["spirali", "felci", "giardino", "nuova vita", "verde"],
-      likes: 178,
-      views: 2234,
-    },
-    {
-      id: "SPR25-007",
-      title: "Ngā Rau o Tane",
-      artist: "Teika Moanaroa",
-      status: "sold",
-      price: 45,
-      collection: "Estate 2025",
-      description: "Le foglie di Tāne — Tāne Mahuta è il dio della foresta nella mitologia maori, padre di tutte le piante.",
-      image: "https://images.unsplash.com/photo-1530903677198-7c9f3577a63e?q=80&w=1552&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "15 Marzo 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["tane", "foresta", "mitologia", "foglie", "dio"],
-      likes: 245,
-      views: 2891,
-    },
-    {
-      id: "SPR25-012",
-      title: "Puāwai o te Ao",
-      artist: "Hinemoana Raukura",
-      price: 45,
-      collection: "Estate 2025",
-      description: "Fioritura del mondo — un'opera che celebra la bellezza delle piante che sbocciano in armonia con la natura.",
-      status: "sold",
-      image: "https://images.unsplash.com/photo-1590235913215-c52fffb2f3f0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "20 Marzo 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["fioritura", "mondo", "piante", "armonia", "natura"],
-      likes: 167,
-      views: 1923,
-    },
-    {
-      id: "SPR25-018",
-      title: "Rautipu Aroha",
-      artist: "Rongo Pikiatua",
-      price: 45,
-      collection: "Estate 2025",
-      description: "Foglie intrecciate d'amore — ispirato all'arte dell'intreccio con le foglie di harakeke (flax).",
-      status: "sold",
-      image: "https://images.unsplash.com/photo-1727525895934-ae4350538c59?q=80&w=1012&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      sealDate: "28 Marzo 2025",
-      materials: "Cartoncino - dipinta a mano",
-      dimensions: "63 mm x 88 mm",
-      edition: "1/1 - Pezzo Unico",
-      tags: ["intreccio", "amore", "harakeke", "flax", "tradizionale"],
-      likes: 198,
-      views: 2456,
-    },
-  ]
+
+  const artworks = artworks_db
 
   // Show loading state while resolving params
   if (isLoading) {
@@ -288,60 +155,7 @@ export default function ArtworkPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Palette className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                <Link
-                  href="/"
-                  className="text-gray-700 hover:text-pink-600 transition-colors font-bold tracking-wide"
-                >
-                gradity
-              </Link>
-              </h1>
-            </div>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link href="/gallery">
-                <Button
-                  variant="outline"
-                  className="border-2 border-black bg-transparent font-bold uppercase flex items-center space-x-2"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  <span>Torna alla Galleria</span>
-                </Button>
-              </Link>
-              <Link
-                href="/plaque"
-                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
-              >
-                La Placca
-              </Link>
-              <Link
-                href="/about"
-                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
-              >
-                Chi Siamo
-              </Link>
-              <Link
-                href="/verify"
-                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
-              >
-                Verifica
-              </Link>
-              <Link href="/submit">
-                <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 font-bold uppercase tracking-wide">
-                  Proponi Opera
-                </Button>
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header/>
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
@@ -519,123 +333,7 @@ export default function ArtworkPage({ params }: PageProps) {
         </div>
       </div>
      
-        {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Palette className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">gradity</span>
-              </div>
-              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
-            </div>
-            <div>
-              <h5 className="font-bold mb-4">Ultime Collezioni</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-yellow-500 to-orange-600"></div>
-                    <Link href="/gallery?collection=EST-2025" className="group-hover:text-lg transition-all duration-200">
-                      Estate 2025
-                    </Link>
-                  </div>
-                </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-red-600"></div>
-                    <Link href="/gallery?collection=AUT-2025" className="group-hover:text-lg transition-all duration-200">
-                      Autunno 2025
-                    </Link>
-                  </div>
-                </li>
-                {/* <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-600"></div>
-                    <Link
-                      href="/collections#cyberpunk-special"
-                      className="group-hover:text-lg transition-all duration-200"
-                    >
-                      Cyberpunk Special
-                    </Link>
-                  </div>
-                </li>*/}
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-600"></div>
-                    <Link href="/gallery?collection=EST-2026" className="group-hover:text-lg transition-all duration-200">
-                      Estate 2026
-                    </Link>
-                  </div>
-                </li> 
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-bold mb-4">Arte</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/gallery" className="group-hover:text-lg transition-all duration-200">
-                    Galleria
-                  </Link>
-                  <GalleryHorizontalEnd className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/verify" className="group-hover:text-lg transition-all duration-200">
-                    Verifica
-                  </Link>
-                  <CheckCircle className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/submit" className="group-hover:text-lg transition-all duration-200">
-                    Proponi Opera
-                  </Link>
-                  <Forward className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/plaque" className="group-hover:text-lg transition-all duration-200">
-                    la Placca
-                  </Link>
-                  <Vault className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-bold mb-4">Supporto</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
-                    Contattaci
-                  </Link>
-                  <Mail className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/about" className="group-hover:text-lg transition-all duration-200">
-                    Chi siamo
-                  </Link>
-                  <Users className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
-                    Acquista su Vinted
-                  </Link>
-                  <Euro className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="https://www.instagram.com/gradity_art/" target="_blank" className="group-hover:text-lg transition-all duration-200">
-                    Instagram
-                  </Link>
-                  <Instagram className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 gradity.it — Tutti i diritti riservati.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

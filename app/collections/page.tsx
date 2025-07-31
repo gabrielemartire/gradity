@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import { Palette, Calendar, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import Header from "@/app/header"
+import Footer from "@/app/footer"
 
 export default function CollectionsPage() {
   const collections = [
@@ -105,49 +107,7 @@ export default function CollectionsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b-4 border-black bg-white">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
-                <Palette className="w-7 h-7 text-white" />
-              </div>
-              <h1 className="text-3xl font-black tracking-tight">VAULT ART</h1>
-            </Link>
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link
-                href="/"
-                className="text-black hover:text-gray-600 font-bold uppercase tracking-wide flex items-center space-x-2"
-              >
-                <span className="opacity-0 hover:opacity-100 transition-opacity">🏠</span>
-                <span>Home</span>
-              </Link>
-              <Link
-                href="/gallery"
-                className="text-black hover:text-gray-600 font-bold uppercase tracking-wide flex items-center space-x-2"
-              >
-                <span className="opacity-0 hover:opacity-100 transition-opacity">🖼️</span>
-                <span>Galleria</span>
-              </Link>
-              <Link
-                href="/about"
-                className="text-black hover:text-gray-600 font-bold uppercase tracking-wide flex items-center space-x-2"
-              >
-                <span className="opacity-0 hover:opacity-100 transition-opacity">ℹ️</span>
-                <span>Chi Siamo</span>
-              </Link>
-              <Link
-                href="/verify"
-                className="text-black hover:text-gray-600 font-bold uppercase tracking-wide flex items-center space-x-2"
-              >
-                <span className="opacity-0 hover:opacity-100 transition-opacity">✅</span>
-                <span>Verifica</span>
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header/>
 
       <div className="container mx-auto px-4 py-16">
         {/* Hero Section */}
@@ -268,6 +228,7 @@ export default function CollectionsPage() {
           </Card>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
