@@ -39,16 +39,12 @@ export default function UploadPage() {
 
           {/* Specifiche Carta Collezionabile */}
           <Card className="mb-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-              <CardTitle className="text-2xl font-black uppercase tracking-wide flex items-center">
-                <Info className="w-6 h-6 mr-3" />
-                Specifiche Carta Collezionabile
-              </CardTitle>
-            </CardHeader>
+          <div className="bg-gradient-to-r from-purple-400 to-pink-400 p-2">
+          <div className="bg-white p-4">
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-2xl font-black mb-6 uppercase">Dimensioni Richieste</h3>
+                  <h3 className="text-2xl font-black mb-6 uppercase">Dimensioni Opera</h3>
                   <div className="space-y-4">
                     <div className="bg-black text-white p-4">
                       <h4 className="font-black mb-2 uppercase">Dimensioni Fisiche</h4>
@@ -89,16 +85,12 @@ export default function UploadPage() {
                 </div>
               </div>
             </CardContent>
+            </div>
+            </div>
           </Card>
 
           {/* Carica la Tua Opera */}
           <Card className="mb-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <CardHeader className="bg-black text-white">
-            <CardTitle className="text-2xl font-black uppercase tracking-wide flex items-center">
-              <Upload className="w-6 h-6 mr-4" />
-              Carica la Tua Opera
-            </CardTitle>
-          </CardHeader>
             <CardContent className="p-8">
               <div className="space-y-8">
                 {/* Google Form Link Section */}
@@ -165,12 +157,6 @@ export default function UploadPage() {
 
         {/* Timeline Process */}
         <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-black text-white">
-            <CardTitle className="text-2xl font-black uppercase tracking-wide flex items-center">
-              <Clock className="w-6 h-6 mr-4" />
-              Timeline del Processo
-            </CardTitle>
-          </CardHeader>
           <CardContent className="p-12">
             <div className="max-w-4xl mx-auto">
               <h3 className="text-3xl font-black text-center mb-12 uppercase">Dal Concept alla vendita</h3>
@@ -189,7 +175,7 @@ export default function UploadPage() {
                       <div className="flex items-center mb-4">
                         <Upload className="w-6 h-6 mr-3 text-purple-600" />
                         <h4 className="text-xl font-black uppercase">Proposta Opera</h4>
-                        <Badge className="ml-auto bg-blue-100 text-blue-800">giorno 0</Badge>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">giorno 0</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
                         {`L'artista invia una foto della sua opera (completatta o in progresso) tramite il nostro sistema, compilando tutti i dettagli
@@ -208,7 +194,7 @@ export default function UploadPage() {
                       <div className="flex items-center mb-4">
                         <Eye className="w-6 h-6 mr-3 text-purple-600" />
                         <h4 className="text-xl font-black uppercase">Valutazione Curatoriale</h4>
-                        <Badge className="ml-auto bg-yellow-100 text-yellow-800">giorno 2-4</Badge>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">giorno 1-3</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
                         Gradity valuta secondo criteri di originalità, qualità tecnica,
@@ -225,7 +211,7 @@ export default function UploadPage() {
                       <div className="flex items-center mb-4">
                         <Truck className="w-6 h-6 mr-3 text-purple-600" />
                         <h4 className="text-xl font-black uppercase">Spedizione Opera a Gradity</h4>
-                        <Badge className="ml-auto bg-yellow-100 text-yellow-800">giorno 5-12</Badge>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">tempo tecnico di spedizione</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
                         Se selezionata, sarà possibile inviare fisicamente il prodotto disegnato e dipinto a Gradity per la certificazione.
@@ -233,7 +219,25 @@ export default function UploadPage() {
                     </div>
                   </div>
 
-                  {/* Step 3 */}
+                  {/* Step 5 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">4</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <Shield className="w-6 h-6 mr-3 text-purple-600" />
+                        <h4 className="text-xl font-black uppercase">Certificazione e Sigillatura</h4>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">entro 3 giorni</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        Appena riceviamo la tua opera, essa sarà etichettata con codice univoco, quindi sigillata nella placca
+                        trasparente protettiva. In concomitanza avverrà la registrazione nel database di autenticità.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 4 */}
                   <div className="flex items-start space-x-8">
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
                       <span className="text-white font-black text-xl">4</span>
@@ -242,7 +246,7 @@ export default function UploadPage() {
                       <div className="flex items-center mb-4">
                         <CheckCircle className="w-6 h-6 mr-3 text-green-600" />
                         <h4 className="text-xl font-black uppercase">Messa in vendita</h4>
-                        <Badge className="ml-auto bg-green-100 text-green-800">3-5 giorni</Badge>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">data apertura della Collezione</Badge>
                       </div>
                       <p className="text-gray-700 font-medium mb-4">
                         Una volta aperte le vendite delle opere, i compratori potrenno acquistare le opere tramite vinted, agli artisti sarà inviato un resoconto dettagliato finale.
@@ -285,24 +289,6 @@ export default function UploadPage() {
                     </div>
                   </div>
 
-                  {/* Step 5 */}
-                  <div className="flex items-start space-x-8">
-                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
-                      <span className="text-white font-black text-xl">5</span>
-                    </div>
-                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
-                      <div className="flex items-center mb-4">
-                        <Shield className="w-6 h-6 mr-3 text-purple-600" />
-                        <h4 className="text-xl font-black uppercase">Certificazione e Sigillatura</h4>
-                        <Badge className="ml-auto bg-orange-100 text-orange-800">3-4 giorni</Badge>
-                      </div>
-                      <p className="text-gray-700 font-medium">
-                        Quando una tua opera viene venduta, essa sarà etichettata con codice univoco, quindi sigillata nella placca
-                        trasparente protettiva. In concomitanza avverrà la registrazione nel database di autenticità.
-                      </p>
-                    </div>
-                  </div>
-
                   {/* Step 6 */}
                   <div className="flex items-start space-x-8">
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
@@ -312,7 +298,7 @@ export default function UploadPage() {
                       <div className="flex items-center mb-4">
                         <Truck className="w-6 h-6 mr-3 text-purple-600" />
                         <h4 className="text-xl font-black uppercase">Spedizione verso il compratore</h4>
-                        <Badge className="ml-auto bg-pink-100 text-pink-800">1-2 giorni</Badge>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">1-2 giorni</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
                         {`Gradity si occupa della spedizione sicura dell'opera al compratore, garantendo tracciamento e
@@ -330,7 +316,7 @@ export default function UploadPage() {
                       <div className="flex items-center mb-4">
                         <DollarSign className="w-6 h-6 mr-3 text-green-600" />
                         <h4 className="text-xl font-black uppercase">Royalties e chiusura del contratto</h4>
-                        <Badge className="ml-auto bg-green-100 text-green-800">Asap</Badge>
+                        <Badge className="ml-auto bg-pink-100 text-gray-800">il prima possibile</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
                         {`Una volta completata la vendita, Gradity trasferisce le royalties all'artista e chiude il contratto.

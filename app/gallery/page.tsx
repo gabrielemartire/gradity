@@ -46,12 +46,14 @@ export default function GalleryPage() {
         </div>
 
         {/* Filters */}
-        <Card className="mb-8 border-0 bg-white/80 backdrop-blur-sm">
+        <Card className="mb-20 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-2">
+        <div className="bg-white p-4">
           <CardContent className="p-6">
             <div className="flex flex-col lg:flex-row gap-4 items-center">
               <div className="flex-1 w-full lg:w-auto">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800 w-5 h-5" />
                   <Input
                     placeholder="Cerca per titolo, artista o codice..."
                     value={searchTerm}
@@ -106,6 +108,8 @@ export default function GalleryPage() {
               </div>
             </div>
           </CardContent>
+        </div>
+        </div>
         </Card>
 
         {/* Results Count */}

@@ -88,9 +88,6 @@ export default function PlaquePage() {
 
         {/* Label Reading Guide */}
         <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-black text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">Etichetta, come leggerla?</CardTitle>
-          </CardHeader>
           <CardContent className="p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
@@ -122,7 +119,7 @@ export default function PlaquePage() {
               </div>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-black mb-6 uppercase">Elementi Etichetta</h3>
+                  <h3 className="text-2xl font-black mb-6 uppercase">{`Come leggere l'etichetta`}</h3>
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center flex-shrink-0 font-black text-sm">
@@ -173,9 +170,7 @@ export default function PlaquePage() {
 
         {/* Special Features */}
         <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">Caratteristiche Speciali</CardTitle>
-          </CardHeader>
+
           <CardContent className="p-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="text-center p-6 border-2 border-black">
@@ -209,52 +204,6 @@ export default function PlaquePage() {
           </CardContent>
         </Card>
 
-        {/* Process */}
-        <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-black text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">Processo di Sigillatura</CardTitle>
-          </CardHeader>
-          <CardContent className="p-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  1
-                </div>
-                <h4 className="text-lg font-black mb-4 uppercase">Preparazione</h4>
-                <p className="text-gray-700 font-medium text-sm">
-                  Le opere vengono ispezionate e preparate per la sigillatura
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  2
-                </div>
-                <h4 className="text-lg font-black mb-4 uppercase">Etichettatura</h4>
-                <p className="text-gray-700 font-medium text-sm">
-                  Vengono applicate etichetta con codice univoco e QR code
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  3
-                </div>
-                <h4 className="text-lg font-black mb-4 uppercase">Sigillatura</h4>
-                <p className="text-gray-700 font-medium text-sm">
-                  Sigillatura a caldo nella placca trasparente protettiva
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  4
-                </div>
-                <h4 className="text-lg font-black mb-4 uppercase">Certificazione</h4>
-                <p className="text-gray-700 font-medium text-sm">
-                  Registrazione nel database e rilascio del certificato digitale
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* CTA */}
         <div className="text-center mt-20">

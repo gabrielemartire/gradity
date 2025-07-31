@@ -79,14 +79,16 @@ export default function AboutPage() {
         </div>
 
         {/* Mission */}
-        <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">La Nostra Missione</CardTitle>
-          </CardHeader>
-          <CardContent className="p-12">
+        <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-2">
+        <div className="bg-white p-6">
+          <CardContent className="p-4">
+            <div className="text-center">
+                <h3 className="text-3xl font-black mb-4 uppercase">La nostra mission</h3>
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h3 className="text-3xl font-black mb-6 uppercase">Rivoluzionare il Collezionismo</h3>
+                <h3 className="text-3xl font-black mb-6 uppercase italic">{`"Rivoluzionare l'arte pop"`}</h3>
                 <p className="text-lg text-gray-700 mb-6 font-medium leading-relaxed">
                   Crediamo che ogni opera artistica meriti di essere preservata e certificata. Il nostro sistema di
                   sigillatura in placche trasparenti garantisce autenticità e conservazione nel tempo.
@@ -119,6 +121,8 @@ export default function AboutPage() {
               </div>
             </div>
           </CardContent>
+        </div>
+        </div>
         </Card>
 
         {/* Stats */}
@@ -140,10 +144,10 @@ export default function AboutPage() {
 
         {/* Team */}
         <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-black text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">Il Nostro Team</CardTitle>
-          </CardHeader>
-          <CardContent className="p-12">
+          <CardContent className="p-12 pt-6">
+            <div className="text-center pb-4">
+              <h3 className="text-4xl font-black mb-4 uppercase">il Team</h3>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {team.map((member, index) => (
                 <div key={index} className="text-center">
@@ -179,53 +183,8 @@ export default function AboutPage() {
           </CardContent>
         </Card>
 
-        {/* Process */}
-        <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide">Come Funziona</CardTitle>
-          </CardHeader>
-          <CardContent className="p-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-black text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  1
-                </div>
-                <h4 className="text-xl font-black mb-4 uppercase">Selezione Curatoriale</h4>
-                <p className="text-gray-700 font-medium">
-                  Il nostro team di esperti seleziona le migliori opere pop contemporanee per ogni collezione stagionale
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  2
-                </div>
-                <h4 className="text-xl font-black mb-4 uppercase">Certificazione</h4>
-                <p className="text-gray-700 font-medium">
-                  Ogni opera viene sigillata in placche trasparenti con certificato di autenticità e codice QR univoco
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-20 h-20 bg-black text-white flex items-center justify-center mx-auto mb-6 font-black text-2xl">
-                  3
-                </div>
-                <h4 className="text-xl font-black mb-4 uppercase">Collezione Esclusiva</h4>
-                <p className="text-gray-700 font-medium">
-                  Le opere certificate entrano a far parte di collezioni limitate e numerate, garantendo unicità e
-                  valore
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card id="contattaci" className="mt-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-            <CardTitle className="text-3xl font-black uppercase tracking-wide flex items-center">
-              <Mail className="w-8 h-8 mr-4" />
-              Contattaci
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-12">
+        <Card id="contattaci" className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <CardContent className="p-12 pt-6">
             <div className="text-center">
               <h3 className="text-3xl font-black mb-6 uppercase">Hai Domande?</h3>
               <p className="text-xl text-gray-700 mb-8 font-medium max-w-2xl mx-auto">

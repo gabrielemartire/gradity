@@ -78,7 +78,9 @@ export default function VerifyPage() {
           </div>
 
           {/* Search Section */}
-          <Card className="mb-8 border-0 bg-white/80 backdrop-blur-sm shadow-xl pb-8">
+          <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+          <div className="bg-gradient-to-r from-dark-100 to-dark-100 p-2">
+          <div className="bg-white p-4">
             <CardHeader>
               <CardTitle className="text-2xl text-center mt-2">Inserisci Codice di Verifica</CardTitle>
             </CardHeader>
@@ -123,11 +125,15 @@ export default function VerifyPage() {
                 </Button>
               </div> */}
             </CardContent>
+          </div>
+          </div>
           </Card>
 
           {/* Results Section */}
           {verificationResult && (
-            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-xl">
+            <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-2">
+            <div className="bg-white p-4">
               <CardContent className="p-8">
                 {verificationResult.valid ? (
                   <div>
@@ -223,11 +229,15 @@ export default function VerifyPage() {
                   </div>
                 )}
               </CardContent>
+            </div>
+          </div>
             </Card>
           )}
 
           {/* Help Section */}
-          <Card className="mt-8 border-0 bg-white/80 backdrop-blur-sm">
+          <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-2">
+          <div className="bg-white p-4">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6 text-center">Come Funziona la Verifica</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -256,6 +266,8 @@ export default function VerifyPage() {
                 </div>
               </div>
             </CardContent>
+          </div>
+          </div>
           </Card>
 
 {/* Test Codes */}

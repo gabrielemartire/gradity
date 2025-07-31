@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Palette, Calendar, Users, Target, CheckCircle, Instagram, Euro, Mail, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
 import Link from "next/link"
 import Header from "@/app/header"
+import Footer from "@/app/footer"
 
 export default function SubmitPage() {
   const currentSeason = {
@@ -39,12 +40,15 @@ export default function SubmitPage() {
           </div>
 
           {/* Current Season Status */}
-          <Card className="mb-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <Card className="mb-20 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+          <div className="bg-gradient-to-r from-purple-400 to-pink-400 p-2">
+          <div className="bg-white p-4">
+          {/* <Card className="mb-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
               <CardTitle className="text-2xl font-black uppercase tracking-wide">
                 Stagione Attuale
               </CardTitle>
-            </CardHeader>
+            </CardHeader> */}
             <CardContent className="p-8">
               {/* <div className="flex items-start space-x-4 mb-8">
                 <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -110,6 +114,8 @@ export default function SubmitPage() {
                 </Button>
               </Link></div>
             </CardContent>
+          </div>
+          </div>
           </Card>
 
           {/* Next Season */}
@@ -117,7 +123,7 @@ export default function SubmitPage() {
             <CardContent className="p-8">
               <div className="text-center">
                 <h3 className="text-3xl font-black mb-6 uppercase">Prossima Stagione</h3>
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-8 mb-6">
+                <div className="bg-gradient-to-r from-purple-200 border-black to-pink-200 text-black p-8 mb-6">
                   <h4 className="text-4xl font-black mb-4">{nextSeason.name}</h4>
                   <p className="text-xl font-medium">Apertura proposte: {nextSeason.opensOn}</p>
                 </div>
@@ -221,123 +227,7 @@ export default function SubmitPage() {
         </div>
       </div>
 
-       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Palette className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">gradity</span>
-              </div>
-              <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
-            </div>
-            <div>
-              <h5 className="font-bold mb-4">Ultime Collezioni</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-yellow-500 to-orange-600"></div>
-                    <Link href="/gallery?collection=EST-2025" className="group-hover:text-lg transition-all duration-200">
-                      Estate 2025
-                    </Link>
-                  </div>
-                </li>
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-red-600"></div>
-                    <Link href="/gallery?collection=AUT-2025" className="group-hover:text-lg transition-all duration-200">
-                      Autunno 2025
-                    </Link>
-                  </div>
-                </li>
-                {/* <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-600"></div>
-                    <Link
-                      href="/collections#cyberpunk-special"
-                      className="group-hover:text-lg transition-all duration-200"
-                    >
-                      Cyberpunk Special
-                    </Link>
-                  </div>
-                </li>*/}
-                <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-600"></div>
-                    <Link href="/gallery?collection=EST-2026" className="group-hover:text-lg transition-all duration-200">
-                      Estate 2026
-                    </Link>
-                  </div>
-                </li> 
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-bold mb-4">Arte</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/gallery" className="group-hover:text-lg transition-all duration-200">
-                    Galleria
-                  </Link>
-                  <GalleryHorizontalEnd className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/verify" className="group-hover:text-lg transition-all duration-200">
-                    Verifica
-                  </Link>
-                  <CheckCircle className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/submit" className="group-hover:text-lg transition-all duration-200">
-                    Proponi Opera
-                  </Link>
-                  <Forward className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/plaque" className="group-hover:text-lg transition-all duration-200">
-                    la Placca
-                  </Link>
-                  <Vault className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-bold mb-4">Supporto</h5>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
-                    Contattaci
-                  </Link>
-                  <Mail className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="/about" className="group-hover:text-lg transition-all duration-200">
-                    Chi siamo
-                  </Link>
-                  <Users className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
-                    Acquista su Vinted
-                  </Link>
-                  <Euro className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="https://www.instagram.com/gradity_art/" target="_blank" className="group-hover:text-lg transition-all duration-200">
-                    Instagram
-                  </Link>
-                  <Instagram className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 gradity.it — Tutti i diritti riservati.</p>
-          </div>
-        </div>
-      </footer>
+     <Footer />
     </div>
   )
 }

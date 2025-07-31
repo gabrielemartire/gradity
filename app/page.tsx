@@ -7,6 +7,7 @@ import {
   Shield,
   Clock,
   Users,
+  Brush,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -68,13 +69,12 @@ export default function HomePage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-xl">Collezione {currentCollection.name}</span> 
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-            ARTE POP
+            L'ARTE POP
             <br />
             CERTIFICATA
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Opere artistiche pop esclusive, sigillate e certificate. Solo {currentCollection.totalWorks} pezzi per
-            collezione.
+            {`Opere d'arte esclusice, disegnate a mano, sigillate e certificate.`}
           </p>
           <div className="flex flex-col sm:flex-column gap-4 justify-center mb-12">
             <Link href="/gallery">
@@ -201,16 +201,16 @@ export default function HomePage() {
               </div>
               <h4 className="text-xl font-bold mb-4">Certificazione Garantita</h4>
               <p className="text-gray-600">
-                Ogni opera è sigillata in placche trasparenti con certificato di autenticità e codice QR verificabile.
+                Ogni opera è sigillata in placche trasparenti con certificato di autenticità e codice di verifica.
               </p>
             </div>
             <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-cyan-50 border border-purple-200">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-white" />
+                <Brush className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-bold mb-4">Collezioni Esclusive</h4>
+              <h4 className="text-xl font-bold mb-4">Opere d'arte create a mano</h4>
               <p className="text-gray-600">
-                Solo un numero limitato di opere per stagione, selezionate accuratamente per garantire unicità.
+                Solo una singola copia, selezionata accuratamente per garantire unicità. Garantiamo che non saranno proposte altre copie identiche.
               </p>
             </div>
             <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-cyan-50 to-pink-50 border border-cyan-200">
@@ -219,7 +219,7 @@ export default function HomePage() {
               </div>
               <h4 className="text-xl font-bold mb-4">Verifica Immediata</h4>
               <p className="text-gray-600">
-                Sistema di verifica opera tramite codice di autenticità.
+                {`Sistema di verifica dell'opera tramite codice di autenticità.`}
               </p>
             </div>
           </div>
