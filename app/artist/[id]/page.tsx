@@ -61,7 +61,7 @@ export default function ArtistPage({ params }: PageProps) {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-black mb-4">Artista Non Trovato</h1>
-          <p className="text-gray-600 mb-8">L'artista con ID {artistID} non esiste.</p>
+          <p className="text-gray-600 mb-8">Questo artista con ID {artistID} non esiste.</p>
           <p className="text-sm text-gray-500 mb-8">
             IDs disponibili: {artists_db.map(a => a.id).join(", ")}
           </p>

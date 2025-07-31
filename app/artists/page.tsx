@@ -6,14 +6,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Palette, Search, Grid, List, MapPin, Instagram, Twitter, Globe, Mail, Users } from "lucide-react"
+import { Search, MapPin, Instagram, Twitter, Globe, Mail, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import artists_db from "@/db/artists"
 import Header from "@/app/header"
 
 export default function ArtistsPage() {
-  const [viewMode, setViewMode] = useState<"grid" | "table">("grid")
   const [searchTerm, setSearchTerm] = useState("")
   const [filterLocation, setFilterLocation] = useState("all")
   const [sortBy, setSortBy] = useState("name")
@@ -148,7 +147,7 @@ export default function ArtistsPage() {
         </div>
 
         {/* Artists Grid View */}
-        {viewMode === "grid" && (
+        {(
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sortedArtists.map((artist) => (
               <Card
