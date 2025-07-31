@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Upload, Vault, Info, Clock, Eye, CheckCircle, FileText, Shield, Globe, DollarSign, Truck } from "lucide-react"
+import { Upload, Vault, Info, Clock, Eye, CheckCircle, Shield, DollarSign, Truck } from "lucide-react"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
 import Link from "next/link"
