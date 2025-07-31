@@ -10,13 +10,14 @@ import Image from "next/image"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
 import artworks_db from "@/db/artworks"
+import artists_db from "@/db/artists"
 
 
 // Define types for better TypeScript support
 interface Artwork {
   id: string;
   title: string;
-  artist: string;
+  artist: number;
   collection: string;
   price: number;
   sealDate: string;
@@ -32,6 +33,9 @@ interface VerificationResult {
   valid: boolean;
   artwork?: Artwork;
   message?: string;
+  artist?: {
+    name: string;
+  };
 }
 
 export default function VerifyPage() {
@@ -44,11 +48,13 @@ export default function VerifyPage() {
 
   setTimeout(() => {
     const artwork = artworks_db.find(art => art.id === searchCode) || null;
+    const artist = artists_db.find(art => art.id === artwork?.artist) || null;
 
     if (artwork) {
       setVerificationResult({
         valid: true,
         artwork: artwork,
+        artist: artist ? { name: artist.name } : undefined,
       });
     } else {
       setVerificationResult({
@@ -163,7 +169,7 @@ export default function VerifyPage() {
                             <span>Certificato Autentico</span>
                           </div>
                           <h2 className="text-3xl font-bold mb-2">{verificationResult.artwork!.title}</h2>
-                          <p className="text-xl text-gray-600 mb-4">di {verificationResult.artwork!.artist}</p>
+                          <p className="text-xl text-gray-600 mb-4">di {verificationResult.artist!.name}</p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
