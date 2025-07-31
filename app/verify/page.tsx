@@ -9,16 +9,38 @@ import { QrCode, Search, CheckCircle, XCircle, Palette, Instagram, Euro, Users, 
 import Image from "next/image"
 import Link from "next/link"
 
+// Define types for better TypeScript support
+interface Artwork {
+  id: string;
+  title: string;
+  artist: string;
+  collection: string;
+  price: number;
+  sealDate: string;
+  owner: string;
+  image: string;
+  description: string;
+  materials: string;
+  dimensions: string;
+  edition: string;
+}
+
+interface VerificationResult {
+  valid: boolean;
+  artwork?: Artwork;
+  message?: string;
+}
+
 export default function VerifyPage() {
   const [searchCode, setSearchCode] = useState("")
-  const [verificationResult, setVerificationResult] = useState(null)
+  const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleVerify = async () => {
   setIsLoading(true)
 
   setTimeout(() => {
-    let artwork = null;
+    let artwork: Artwork | null = null;
     
     switch (searchCode) {
       case "AUT25-001":
@@ -327,8 +349,8 @@ export default function VerifyPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       <div>
                         <Image
-                          src={verificationResult.artwork.image || "/placeholder.svg"}
-                          alt={verificationResult.artwork.title}
+                          src={verificationResult.artwork!.image || "/placeholder.svg"}
+                          alt={verificationResult.artwork!.title}
                           width={630}
                           height={880}
                           className="rounded-lg shadow-lg object-cover object-center"
@@ -340,45 +362,45 @@ export default function VerifyPage() {
                             <CheckCircle className="w-5 h-5" />
                             <span>Certificato Autentico</span>
                           </div>
-                          <h2 className="text-3xl font-bold mb-2">{verificationResult.artwork.title}</h2>
-                          <p className="text-xl text-gray-600 mb-4">di {verificationResult.artwork.artist}</p>
+                          <h2 className="text-3xl font-bold mb-2">{verificationResult.artwork!.title}</h2>
+                          <p className="text-xl text-gray-600 mb-4">di {verificationResult.artwork!.artist}</p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">
                           <div className="bg-pink-50 p-4 rounded-lg">
                             <div className="text-sm text-gray-600">Codice Opera</div>
-                            <div className="font-mono font-bold">{verificationResult.artwork.id}</div>
+                            <div className="font-mono font-bold">{verificationResult.artwork!.id}</div>
                           </div>
                           <div className="bg-purple-50 p-4 rounded-lg">
                             <div className="text-sm text-gray-600">Collezione</div>
-                            <div className="font-bold">{verificationResult.artwork.collection}</div>
+                            <div className="font-bold">{verificationResult.artwork!.collection}</div>
                           </div>
                           <div className="bg-cyan-50 p-4 rounded-lg">
                             <div className="text-sm text-gray-600">Prezzo Originale</div>
-                            <div className="font-bold">€{verificationResult.artwork.price}</div>
+                            <div className="font-bold">€{verificationResult.artwork!.price}</div>
                           </div>
                           <div className="bg-orange-50 p-4 rounded-lg">
                             <div className="text-sm text-gray-600">Data Sigillatura</div>
-                            <div className="font-bold">{verificationResult.artwork.sealDate}</div>
+                            <div className="font-bold">{verificationResult.artwork!.sealDate}</div>
                           </div>
                         </div>
 
                         <div className="space-y-4">
                           <div>
                             <h4 className="font-bold mb-2">Descrizione</h4>
-                            <p className="text-gray-600">{verificationResult.artwork.description}</p>
+                            <p className="text-gray-600">{verificationResult.artwork!.description}</p>
                           </div>
                           <div>
                             <h4 className="font-bold mb-2">Specifiche Tecniche</h4>
                             <ul className="text-gray-600 space-y-1">
                               <li>
-                                <strong>Materiali:</strong> {verificationResult.artwork.materials}
+                                <strong>Materiali:</strong> {verificationResult.artwork!.materials}
                               </li>
                               <li>
-                                <strong>Dimensioni:</strong> {verificationResult.artwork.dimensions}
+                                <strong>Dimensioni:</strong> {verificationResult.artwork!.dimensions}
                               </li>
                               <li>
-                                <strong>Edizione:</strong> {verificationResult.artwork.edition}
+                                <strong>Edizione:</strong> {verificationResult.artwork!.edition}
                               </li>
                             </ul>
                           </div>
@@ -516,6 +538,8 @@ export default function VerifyPage() {
           </Card>
         </div>
       </div>
+
+
         {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="container mx-auto">
