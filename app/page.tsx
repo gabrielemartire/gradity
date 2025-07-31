@@ -26,7 +26,7 @@ export default function HomePage() {
     {
       id: "AUT25-001",
       title: "Te Manu o te Rangi",
-      artist: "Aroha Te Ao",
+      artist: "Aroha Te",
       status: "sold",
       price: 45,
       image: "https://images.unsplash.com/photo-1747945872974-4d814f768def?q=80&w=963&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -81,7 +81,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg py-8 px-12"
               >
-                Esplora la Collezione
+                Esplora la Galleria
               </Button>
             </Link>
             
@@ -186,6 +186,40 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+        {/* Stats Overview 
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <Card className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center">
+            <CardContent className="p-6">
+              <div className="text-3xl font-black mb-2 text-purple-600">{artists.length}</div>
+              <div className="font-bold uppercase text-sm">Artisti Totali</div>
+            </CardContent>
+          </Card>
+          <Card className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center">
+            <CardContent className="p-6">
+              <div className="text-3xl font-black mb-2 text-green-600">
+                {artists.reduce((sum, artist) => sum + artist.stats.totalWorks, 0)}
+              </div>
+              <div className="font-bold uppercase text-sm">Opere Totali</div>
+            </CardContent>
+          </Card>
+          <Card className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center">
+            <CardContent className="p-6">
+              <div className="text-3xl font-black mb-2 text-black">
+                {artists.reduce((sum, artist) => sum + artist.stats.sold, 0)}
+              </div>
+              <div className="font-bold uppercase text-sm">Opere Vendute</div>
+            </CardContent>
+          </Card>
+          <Card className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center">
+            <CardContent className="p-6">
+              <div className="text-3xl font-black mb-2 text-pink-600">
+                {artists.reduce((sum, artist) => sum + artist.stats.followers, 0)}
+              </div>
+              <div className="font-bold uppercase text-sm">Followers Totali</div>
+            </CardContent>
+          </Card>
+        </div>*/}
 
       {/* Features */}
       <section className="py-16 px-4 bg-white/50">

@@ -10,6 +10,7 @@ import { Share2, Heart, ShoppingCart } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import artworks_db from "@/db/artworks"
+import artists_db from "@/db/artists"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
 
@@ -70,37 +71,14 @@ export default function ArtworkPage({ params }: PageProps) {
   }
 
   // Create artist object with switch case for avatar URLs
-  const getArtistInfo = (artistName: string) => {
-    let avatar = ""
-    
-    switch (artistName) {
-      case "Aroha Te Ao":
-        avatar = "https://plus.unsplash.com/premium_photo-1675034393635-ae45492f9be6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        break
-      case "Rongo Pikiatua":
-        avatar = "https://images.unsplash.com/photo-1529758146491-1e11fd721f77?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        break
-      case "Teika Moanaroa":
-        avatar = "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        break
-      case "Te Rerehua Wikitōria":
-        avatar = "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        break
-      case "Mereana Kauri":
-        avatar = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        break
-      case "Hinemoana Raukura":
-        avatar = "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        break
-      default:
-        avatar = "/placeholder.svg?height=100&width=100"
-        break
-    }
+  const getArtistInfo = (artistID: number) => {
+    const artist = artists_db.find(a => a.id == artistID)
+    let avatar = artist?.avatar
 
     return {
-      id: artistName.toLowerCase().replace(/\s+/g, '-'),
-      name: artistName,
-      avatar: avatar || "/placeholder.svg?height=100&width=100"
+      id: artistID,
+      name: artist!.name,
+      avatar: avatar || "/placeholder.svg?height=100&width=100",
     }
   }
 

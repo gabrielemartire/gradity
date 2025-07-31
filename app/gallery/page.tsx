@@ -24,7 +24,6 @@ export default function GalleryPage() {
   const filteredArtworks = artworks.filter((artwork) => {
     const matchesSearch =
       artwork.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      artwork.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
       artwork.id.toLowerCase().includes(searchTerm.toLowerCase())
 
     const matchesStatus = filterStatus === "all" || artwork.status === filterStatus
@@ -55,7 +54,7 @@ export default function GalleryPage() {
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800 w-5 h-5" />
                   <Input
-                    placeholder="Cerca per titolo, artista o codice..."
+                    placeholder="Cerca per titolo o codice..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10"

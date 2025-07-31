@@ -2,7 +2,7 @@ const artworks = [
     {
       id: "AUT25-001",
       title: "Te Manu o te Rangi",
-      artist: "Aroha Te Ao",
+      artist: 1,
       status: "available",
       price: 45,
       owner: "Certificato Originale",
@@ -20,7 +20,7 @@ const artworks = [
     {
       id: "AUT25-007",
       title: "Moana Kōtare",
-      artist: "Rongo Pikiatua",
+      artist: 3,
       status: "sold",
       price: 45,
       owner: "Certificato Originale",
@@ -38,7 +38,7 @@ const artworks = [
     {
       id: "AUT25-012",
       title: "Whakarere Kārearea",
-      artist: "Teika Moanaroa",
+      artist: 2,
       price: 45,
       owner: "Certificato Originale",
       collection: "Autunno 2025",
@@ -56,7 +56,7 @@ const artworks = [
     {
       id: "AUT25-018",
       title: "Tūī Karanga",
-      artist: "Te Rerehua Wikitōria",
+      artist: 4,
       price: 45,
       owner: "Certificato Originale",
       collection: "Autunno 2025",
@@ -74,7 +74,7 @@ const artworks = [
     {
       id: "SPR25-001",
       title: "Piko o te Māra",
-      artist: "Mereana Kauri",
+      artist: 5,
       status: "sold",
       price: 45,
       owner: "Certificato Originale",
@@ -92,7 +92,7 @@ const artworks = [
     {
       id: "SPR25-007",
       title: "Ngā Rau o Tane",
-      artist: "Teika Moanaroa",
+      artist: 6,
       status: "sold",
       price: 45,
       owner: "Certificato Originale",
@@ -110,7 +110,7 @@ const artworks = [
     {
       id: "SPR25-012",
       title: "Puāwai o te Ao",
-      artist: "Hinemoana Raukura",
+      artist: 2,
       price: 45,
       owner: "Certificato Originale",
       collection: "Estate 2025",
@@ -128,7 +128,7 @@ const artworks = [
     {
       id: "SPR25-018",
       title: "Rautipu Aroha",
-      artist: "Rongo Pikiatua",
+      artist: 1,
       price: 45,
       owner: "Certificato Originale",
       collection: "Estate 2025",

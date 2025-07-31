@@ -44,6 +44,12 @@ const Header = () => {
                 La Placca
               </Link>
               <Link
+                href="/artists"
+                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
+              >
+                Artisti
+              </Link>
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
               >
