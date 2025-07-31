@@ -73,7 +73,7 @@ export default function ArtworkPage({ params }: PageProps) {
   // Create artist object with switch case for avatar URLs
   const getArtistInfo = (artistID: number) => {
     const artist = artists_db.find(a => a.id == artistID)
-    let avatar = artist?.avatar
+    const avatar = artist?.avatar
 
     return {
       id: artistID,
