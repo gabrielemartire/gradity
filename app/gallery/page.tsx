@@ -291,7 +291,7 @@ export default function GalleryPage() {
           </p>
           <Link href="/submit">
             <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8">
-              Candidati Ora
+              Proponi la tua Opera
             </Button>
           </Link>
         </div>

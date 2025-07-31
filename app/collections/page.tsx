@@ -72,7 +72,7 @@ export default function CollectionsPage() {
     {
       id: "inverno-2024",
       name: "Inverno 2024",
-      description: "La prima collezione Vault Art",
+      description: "La prima collezione gradity",
       totalWorks: 20,
       available: 2,
       sold: 18,
@@ -120,7 +120,7 @@ export default function CollectionsPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
-            Esplora tutte le collezioni Vault Art, dalle più recenti ai pezzi rari ancora disponibili
+            Esplora tutte le collezioni gradity, dalle più recenti ai pezzi rari ancora disponibili
           </p>
         </div>
 

@@ -98,7 +98,7 @@ export default function ArtistPage() {
                         <MapPin className="w-4 h-4" />
                         <span className="font-medium">{artist.location}</span>
                       </div>
-                      <div className="font-medium">Su Vault Art dal {artist.joinDate}</div>
+                      <div className="font-medium">Su gradity dal {artist.joinDate}</div>
                     </div>
                     <p className="text-gray-700 font-medium leading-relaxed max-w-2xl">{artist.bio}</p>
                   </div>

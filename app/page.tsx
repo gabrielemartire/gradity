@@ -61,13 +61,11 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
       <Header />
 
-      {/* Hero Section */}
+      {/* Collezione */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <div className="inline-block mb-6">
-            <Badge className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2 text-lg">
-              Collezione {currentCollection.name}
-            </Badge>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-xl">Collezione {currentCollection.name}</span> 
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
             ARTE POP
@@ -78,20 +76,21 @@ export default function HomePage() {
             Opere artistiche pop esclusive, sigillate e certificate. Solo {currentCollection.totalWorks} pezzi per
             collezione.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-column gap-4 justify-center mb-12">
             <Link href="/gallery">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg px-8"
+                className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg py-8 px-12"
               >
-                Esplora Collezione
+                Esplora la Collezione
               </Button>
             </Link>
+            
             <Link href="/verify">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-8 bg-transparent"
+                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-12 mt-6 bg-transparent"
               >
                 <QrCode className="w-5 h-5 mr-2" />
                 Verifica Opera
@@ -125,7 +124,7 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-            Opere in Evidenza di precedenti Collezioni
+            Opere di precedenti collezioni
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredWorks.map((work) => (
@@ -168,7 +167,7 @@ export default function HomePage() {
                   <h4 className="font-bold text-xl mb-2">{work.title}</h4>
                   <p className="text-gray-600 mb-4">di {work.artist}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-pink-600">€{work.price}</span>
+                    {/* <span className="text-2xl font-bold text-pink-600">€{work.price}</span> */}
                     {work.status === "available" && (
                       <Link href={`/purchase/${work.id}`}>
                         <Button size="sm" className="bg-gradient-to-r from-pink-500 to-purple-600">
@@ -227,6 +226,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CTA Section 4 - Colore più tenue con icona */}
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
+        <div className="container mx-auto text-center">
+          <div className="flex items-center justify-center mb-6">
+            <Shield className="w-10 h-10 text-purple-600 mr-4" />
+            <h3 className="text-4xl font-bold text-gray-900">la Placca</h3>
+          </div>
+          <p className="text-xl mb-8 text-gray-700 max-w-2xl mx-auto">
+            Il nostro sistema più avanzato di certificazione per arte contemporanea. Ogni opera è sigillata, protetta e verificabile per sempre.
+          </p>
+          <Link href="/plaque">
+          <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8">
+            Ecco come proteggiamo le tue opere
+          </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600">
         <div className="container mx-auto text-center text-white">
@@ -237,11 +254,56 @@ export default function HomePage() {
           </p>
           <Link href="/submit">
             <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8">
-              Candidati Ora
+              Proponi la tua Opera
             </Button>
           </Link>
         </div>
       </section>
+
+      {/* Chi siamo
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto text-center">
+          <h3 className="text-4xl font-bold mb-6 text-gray-900">Chi siamo</h3>
+          <p className="text-xl mb-8 text-gray-600 max-w-2xl mx-auto">
+            Gradity è la prima piattaforma che certifica e preserva arte pop attraverso un sistema di sigillatura innovativo e collezioni esclusive.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/about">
+            <Button size="lg" className="bg-gradient-to-r from-pink-500 to-purple-600 text-lg px-8">
+              Scopri di più
+            </Button>
+            </Link>
+            <Link href="/contact">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-gray-900 text-gray-900 hover:bg-gray-100 text-lg px-8 bg-transparent"
+            >
+              Contattaci
+            </Button>
+            </Link>
+          </div>
+        </div>
+      </section> */}
+
+      {/* CTA Section 6 - Sfondo scuro con icona
+      <section className="py-20 px-4 bg-gray-900">
+        <div className="container mx-auto text-center">
+          <div className="flex items-center justify-center mb-6">
+            <Users className="w-10 h-10 text-cyan-400 mr-4" />
+            <h3 className="text-4xl font-bold text-white">Titolo Sezione 6</h3>
+          </div>
+          <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+            Sezione con sfondo scuro e icona. Testo da personalizzare secondo le tue esigenze.
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-gray-900 text-lg px-8"
+          >
+            Pulsante Azione
+          </Button>
+        </div>
+      </section> */}
 
       <Footer />
     </div>

@@ -124,7 +124,7 @@ export default function SubmitPage() {
                 <p className="text-lg text-gray-600 mb-8 font-medium">
                   Le proposte per la prossima stagione apriranno presto. Preparati a sottoporre le tue migliori opere!
                 </p>
-                <Link href="#">
+                <Link href="https://www.instagram.com/gradity_art/" target="_blank">
                   <Button
                     size="lg"
                     className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-black uppercase tracking-wide text-lg px-12 py-4"

@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Users, Award, Zap } from "lucide-react"
+import { Shield, Users, Award, Zap, Mail, Instagram, Twitter, Globe } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
+import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   const team = [
@@ -12,12 +13,16 @@ export default function AboutPage() {
       role: "Founder & CTO",
       image: "https://images.unsplash.com/photo-1635003913011-95971abba560?q=80&w=1056&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "Guida lo sviluppo tecnologico e strategico del progetto, con oltre 10 anni di esperienza nel digitale.",
+      inst: "gabriele.zip",
+      site: "https://gabrielemartire.github.io/",
     },
     {
       name: "Francesco Montini",
       role: "Founder & CPO",
       image: "https://images.unsplash.com/photo-1634896941598-b6b500a502a7?q=80&w=1056&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "Responsabile della visione creativa e del prodotto, unisce competenze artistiche e strategia culturale.",
+      inst: "montins__",
+      site: "https://www.linkedin.com/in/francesco-montini-44095b97/",
     }
     // {
     //   name: "Alex Chen",
@@ -41,7 +46,7 @@ export default function AboutPage() {
 
       <div className="container mx-auto px-4 py-16">
         {/* Hero Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
             CHI
             <br />
@@ -51,6 +56,26 @@ export default function AboutPage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span> è la prima piattaforma che certifica e preserva arte pop attraverso un sistema di
             sigillatura innovativo e collezioni esclusive.
           </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <Link href="#contattaci">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg px-8"
+            >
+              Contattaci
+            </Button>
+          </Link>
+          <Link href="https://instagram.com/gradity_art" target="_blank">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-8 bg-transparent"
+            >
+              <Instagram className="w-5 h-5" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mission */}
@@ -134,6 +159,20 @@ export default function AboutPage() {
                   <h4 className="text-xl font-black mb-2 uppercase">{member.name}</h4>
                   <p className="text-lg font-bold text-gray-600 mb-4">{member.role}</p>
                   <p className="text-gray-700 font-medium">{member.bio}</p>
+
+                  {/* Social Icons */}
+                  <div className="flex justify-center space-x-3 mt-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                      <Link href={`https://instagram.com/${member.inst.toLowerCase()}`} target="_blank">
+                        <Instagram className="w-4 h-4 text-white" />
+                      </Link>
+                    </div>
+                    <div className="w-8 h-8 bg-black flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                      <Link href={`${member.site.toLowerCase()}`} target="_blank">
+                        <Globe className="w-4 h-4 text-white" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -178,21 +217,59 @@ export default function AboutPage() {
             </div>
           </CardContent>
         </Card>
+
+        <Card id="contattaci" className="mt-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+            <CardTitle className="text-3xl font-black uppercase tracking-wide flex items-center">
+              <Mail className="w-8 h-8 mr-4" />
+              Contattaci
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-12">
+            <div className="text-center">
+              <h3 className="text-3xl font-black mb-6 uppercase">Hai Domande?</h3>
+              <p className="text-xl text-gray-700 mb-8 font-medium max-w-2xl mx-auto">
+                Siamo qui per aiutarti! Contattaci per qualsiasi informazione su gradity, le nostre collezioni o il
+                processo di certificazione.
+              </p>
+
+              <div className="mb-8">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 font-black uppercase text-lg px-12 py-4 mb-6"
+                >
+                  <Mail className="w-5 h-5 mr-3" />
+                  Scrivici una Email
+                </Button>
+              </div>
+
+              {/* Important Notice */}
+              <div className="bg-yellow-50 border-4 border-yellow-400 p-8 max-w-3xl mx-auto">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl">⚠️</span>
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-xl font-black mb-3 uppercase text-yellow-800">Importante: Proposte Opere</h4>
+                    <p className="text-gray-700 font-medium mb-4">
+                      Non inviare le tue opere tramite email! Per proporre un'opera per le nostre collezioni, utilizza
+                      il sistema dedicato che garantisce una valutazione professionale.
+                    </p>
+                    <Link href="/submit">
+                      <Button className="bg-yellow-400 text-yellow-900 hover:bg-yellow-500 font-black uppercase">
+                        Proponi Opera Qui
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
       </div>
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600">
-        <div className="container mx-auto text-center text-white">
-          <h3 className="text-4xl font-bold mb-6">Sei un Artista?</h3>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Proponi le tue opere per le prossime collezioni stagionali. Ogni artista selezionato entra a far parte della
-            nostra esclusiva community.
-          </p>
-          <Link href="/submit"
-            className="inline-block bg-white text-pink-600 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
-              Candidati Ora
-          </Link>
-        </div>
-      </section>
+
+
 
       <Footer />
     </div>

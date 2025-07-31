@@ -78,7 +78,7 @@ export default function VerifyPage() {
           </div>
 
           {/* Search Section */}
-          <Card className="mb-8 border-0 bg-white/80 backdrop-blur-sm shadow-xl">
+          <Card className="mb-8 border-0 bg-white/80 backdrop-blur-sm shadow-xl pb-8">
             <CardHeader>
               <CardTitle className="text-2xl text-center mt-2">Inserisci Codice di Verifica</CardTitle>
             </CardHeader>
@@ -108,7 +108,7 @@ export default function VerifyPage() {
                 </Button>
               </div>
 
-              <div className="text-center">
+              {/* <div className="text-center">
                 <div className="inline-flex items-center text-gray-500 mb-4">
                   <div className="h-px bg-gray-300 flex-1"></div>
                   <span className="px-4">oppure</span>
@@ -121,7 +121,7 @@ export default function VerifyPage() {
                   <QrCode className="w-5 h-5 mr-2" />
                   Scansiona QR Code
                 </Button>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
 

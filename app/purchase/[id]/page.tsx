@@ -58,7 +58,7 @@ export default function PurchasePage() {
               <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
                 <Palette className="w-7 h-7 text-white" />
               </div>
-              <h1 className="text-3xl font-black tracking-tight">VAULT ART</h1>
+              <h1 className="text-3xl font-black tracking-tight">gradity</h1>
             </Link>
             <Link href="/gallery">
               <Button
