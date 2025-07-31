@@ -1,8 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Palette, Calendar, Users, Target, CheckCircle, Instagram, Euro, Mail, GalleryHorizontalEnd, Forward, Vault } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Calendar, Target } from "lucide-react"
 import Link from "next/link"
 import Header from "@/app/header"
 import Footer from "@/app/footer"

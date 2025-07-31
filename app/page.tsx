@@ -6,7 +6,6 @@ import {
   QrCode,
   Shield,
   Clock,
-  Users,
   Brush,
 } from "lucide-react"
 import Image from "next/image"
@@ -69,7 +68,7 @@ export default function HomePage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-xl">Collezione {currentCollection.name}</span> 
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-            L'ARTE POP
+            {`L'ARTE POP`}
             <br />
             CERTIFICATA
           </h2>
@@ -208,7 +207,7 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Brush className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-xl font-bold mb-4">Opere d'arte create a mano</h4>
+              <h4 className="text-xl font-bold mb-4">{`Opere d'arte create a mano`}</h4>
               <p className="text-gray-600">
                 Solo una singola copia, selezionata accuratamente per garantire unicità. Garantiamo che non saranno proposte altre copie identiche.
               </p>
