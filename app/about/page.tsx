@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Users, Award, Zap, Mail, Instagram, Twitter, Globe } from "lucide-react"
+import { Shield, Users, Award, Zap, Mail, Instagram, Globe } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Header from "@/app/header"
@@ -252,7 +252,7 @@ export default function AboutPage() {
                   <div className="text-left">
                     <h4 className="text-xl font-black mb-3 uppercase text-yellow-800">Importante: Proposte Opere</h4>
                     <p className="text-gray-700 font-medium mb-4">
-                      Non inviare le tue opere tramite email! Per proporre un'opera per le nostre collezioni, utilizza
+                      Non inviare le tue opere tramite email! Per proporre opere per le nostre collezioni, utilizza
                       il sistema dedicato che garantisce una valutazione professionale.
                     </p>
                     <Link href="/submit">
