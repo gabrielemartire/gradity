@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Upload, Vault, Info } from "lucide-react"
+import { Upload, Vault, Info, Clock, Eye, CheckCircle, FileText, Shield, Globe, DollarSign, Truck } from "lucide-react"
 import Header from "@/app/header"
+import Footer from "@/app/footer"
+import Link from "next/link"
+
 
 export default function UploadPage() {
 
@@ -88,11 +91,14 @@ export default function UploadPage() {
             </CardContent>
           </Card>
 
-          {/* 1. Carica la Tua Opera */}
+          {/* Carica la Tua Opera */}
           <Card className="mb-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <CardHeader className="bg-black text-white">
-              <CardTitle className="text-2xl font-black uppercase tracking-wide">1. Carica la Tua Opera</CardTitle>
-            </CardHeader>
+            <CardTitle className="text-2xl font-black uppercase tracking-wide flex items-center">
+              <Upload className="w-6 h-6 mr-4" />
+              Carica la Tua Opera
+            </CardTitle>
+          </CardHeader>
             <CardContent className="p-8">
               <div className="space-y-8">
                 {/* Google Form Link Section */}
@@ -103,7 +109,7 @@ export default function UploadPage() {
                       <h3 className="text-2xl font-black mb-4 uppercase">Proponi la Tua Opera</h3>
                       <p className="text-lg mb-6 opacity-90">
                         Per sottoporre la tua opera alla valutazione del nostro team curatoriale, compila il modulo di
-                        candidatura ufficiale.
+                        candidatura ufficiale poi scorri giù per scoprire i successivi passaggi.
                       </p>
                     </div>
                     <a
@@ -157,58 +163,202 @@ export default function UploadPage() {
             </CardContent>
           </Card>
 
-          {/* Requisiti Tecnici */}
-          <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-              <CardTitle className="text-2xl font-black uppercase tracking-wide">Requisiti Tecnici</CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-xl font-black mb-4 uppercase">Formato File</h4>
-                  <ul className="space-y-2 text-gray-700 font-medium">
-                    <li className="flex items-center space-x-3">
-                      <Badge className="bg-green-100 text-green-800">✓</Badge>
-                      <span>JPEG (.jpg, .jpeg)</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <Badge className="bg-green-100 text-green-800">✓</Badge>
-                      <span>PNG (.png)</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <Badge className="bg-green-100 text-green-800">✓</Badge>
-                      <span>TIFF (.tiff, .tif)</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xl font-black mb-4 uppercase">Qualità</h4>
-                  <ul className="space-y-2 text-gray-700 font-medium">
-                    <li className="flex items-center space-x-3">
-                      <span className="w-2 h-2 bg-black rounded-full"></span>
-                      <span>Risoluzione: 300 DPI minimo</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <span className="w-2 h-2 bg-black rounded-full"></span>
-                      <span>
-                        Dimensioni: {cardSpecs.widthPx}×{cardSpecs.heightPx}px
-                      </span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <span className="w-2 h-2 bg-black rounded-full"></span>
-                      <span>Peso massimo: 50MB</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <span className="w-2 h-2 bg-black rounded-full"></span>
-                      <span>Spazio colore: sRGB</span>
-                    </li>
-                  </ul>
+        {/* Timeline Process */}
+        <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <CardHeader className="bg-black text-white">
+            <CardTitle className="text-2xl font-black uppercase tracking-wide flex items-center">
+              <Clock className="w-6 h-6 mr-4" />
+              Timeline del Processo
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-12">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-3xl font-black text-center mb-12 uppercase">Dal Concept alla vendita</h3>
+
+              <div className="relative">
+                {/* Timeline Line */}
+                <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600"></div>
+
+                <div className="space-y-12">
+                  {/* Step 1 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">1</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <Upload className="w-6 h-6 mr-3 text-purple-600" />
+                        <h4 className="text-xl font-black uppercase">Proposta Opera</h4>
+                        <Badge className="ml-auto bg-blue-100 text-blue-800">giorno 0</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        L'artista invia una foto della sua opera (completatta o in progresso) tramite il nostro sistema, compilando tutti i dettagli
+                        richiesti: titolo, descrizione, statement artistico e specifiche tecniche. 
+                        N.B.: è possibile inserire watermark.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">2</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <Eye className="w-6 h-6 mr-3 text-purple-600" />
+                        <h4 className="text-xl font-black uppercase">Valutazione Curatoriale</h4>
+                        <Badge className="ml-auto bg-yellow-100 text-yellow-800">giorno 2-4</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        Gradity valuta secondo criteri di originalità, qualità tecnica,
+                        coerenza stilistica e potenziale commerciale. Feedback dettagliato per ogni proposta.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">3</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <Truck className="w-6 h-6 mr-3 text-purple-600" />
+                        <h4 className="text-xl font-black uppercase">Spedizione Opera a Gradity</h4>
+                        <Badge className="ml-auto bg-yellow-100 text-yellow-800">giorno 5-12</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        Se selezionata, sarà possibile inviare fisicamente il prodotto disegnato e dipinto a Gradity per la certificazione.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">4</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <CheckCircle className="w-6 h-6 mr-3 text-green-600" />
+                        <h4 className="text-xl font-black uppercase">Messa in vendita</h4>
+                        <Badge className="ml-auto bg-green-100 text-green-800">3-5 giorni</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium mb-4">
+                        Una volta aperte le vendite delle opere, i compratori potrenno acquistare le opere tramite vinted, agli artisti sarà inviato un resoconto dettagliato finale.
+                      </p>
+                      {/* Financial Breakdown Table */}
+                      <div className="bg-gray-50 border-2 border-gray-300 p-4">
+                        <h5 className="font-black text-sm uppercase mb-4 text-center">
+                          Esempio Calcolo Guadagni (Prezzo Vendita: €100)
+                        </h5>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between py-1 border-b border-gray-200">
+                              <span className="font-medium">
+                                Spedizione in anticipo da te a gradity  
+                              </span>
+                            <div className="flex items-center">
+                                <Link href="https://www.poste.it/lettera/pieghi-di-libri/">
+                                  <Info className="w-4 h-4 mr-2 font-bold text-purple-600" />
+                                </Link>
+                            <span className="font-bold text-purple-600">da €2</span>
+                            </div>
+                          </div>
+                          <div className="flex justify-between py-1 border-b border-gray-200">
+                            <span className="font-medium">Commissioni per la Certificazione (10%)</span>
+                            <span className="font-bold text-red-600">-€10</span>
+                          </div>
+                          <div className="flex justify-between py-1 border-b border-gray-200">
+                            <span className="font-medium">Marketing & Promozione (5%)</span>
+                            <span className="font-bold text-red-600">-€5</span>
+                          </div>
+                          <div className="flex justify-between py-1 border-b border-gray-200">
+                            <span className="font-medium">Costi Commissioni Vinted/ Spedizione</span>
+                            <span className="font-bold text-gray-600">a spese del compratore</span>
+                          </div>
+                          <div className="flex justify-between py-2 bg-gradient-to-r from-purple-100 to-pink-100 px-2 border-2 border-purple-400 font-black text-lg">
+                            <span className="uppercase">Il Tuo Guadagno (~85%)</span>
+                            <span className="text-purple-600">€85</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 5 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">5</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <Shield className="w-6 h-6 mr-3 text-purple-600" />
+                        <h4 className="text-xl font-black uppercase">Certificazione e Sigillatura</h4>
+                        <Badge className="ml-auto bg-orange-100 text-orange-800">3-4 giorni</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        Quando una tua opera viene venduta, essa sarà etichettata con codice univoco, quindi sigillata nella placca
+                        trasparente protettiva. In concomitanza avverrà la registrazione nel database di autenticità.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 6 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">6</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <Truck className="w-6 h-6 mr-3 text-purple-600" />
+                        <h4 className="text-xl font-black uppercase">Spedizione verso il compratore</h4>
+                        <Badge className="ml-auto bg-pink-100 text-pink-800">1-2 giorni</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        Gradity si occupa della spedizione sicura dell'opera al compratore, garantendo tracciamento e
+                        consegna rapida. Il compratore riceve l'opera con certificato di autenticità incluso.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 7 */}
+                  <div className="flex items-start space-x-8">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 z-10">
+                      <span className="text-white font-black text-xl">7</span>
+                    </div>
+                    <div className="flex-1 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+                      <div className="flex items-center mb-4">
+                        <DollarSign className="w-6 h-6 mr-3 text-green-600" />
+                        <h4 className="text-xl font-black uppercase">Royalties e chiusura del contratto</h4>
+                        <Badge className="ml-auto bg-green-100 text-green-800">Asap</Badge>
+                      </div>
+                      <p className="text-gray-700 font-medium">
+                        Una volta completata la vendita, Gradity trasferisce le royalties all'artista e chiude il contratto.
+                        L'artista riceve un resoconto dettagliato delle vendite e dei guadagni.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+
+              {/* Summary Box */}
+              <div className="mt-16 bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="text-center">
+                  <h4 className="text-2xl font-black mb-4 uppercase">Tempo Totale del Processo</h4>
+                  <div className="text-4xl font-black mb-4">25-35 GIORNI</div>
+                  <p className="text-lg opacity-90">
+                    Dalla proposta iniziale alla pubblicazione nella collezione ufficiale
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         </div>
       </div>
+
+      <Footer />
       
     </div>
   )

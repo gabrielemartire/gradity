@@ -136,7 +136,7 @@ export default function SubmitPage() {
             </CardContent>
           </Card>
 
-          {/* Guidelines */}
+          {/* Guidelines
           <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <CardHeader className="bg-black text-white">
               <CardTitle className="text-2xl font-black uppercase tracking-wide">Linee Guida</CardTitle>
@@ -217,7 +217,7 @@ export default function SubmitPage() {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
 
