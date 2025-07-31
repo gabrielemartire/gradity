@@ -192,9 +192,9 @@ export default function UploadPage() {
                         <Badge className="ml-auto bg-blue-100 text-blue-800">giorno 0</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
-                        L'artista invia una foto della sua opera (completatta o in progresso) tramite il nostro sistema, compilando tutti i dettagli
+                        {`L'artista invia una foto della sua opera (completatta o in progresso) tramite il nostro sistema, compilando tutti i dettagli
                         richiesti: titolo, descrizione, statement artistico e specifiche tecniche. 
-                        N.B.: è possibile inserire watermark.
+                        N.B.: è possibile inserire watermark.`}
                       </p>
                     </div>
                   </div>
@@ -315,8 +315,8 @@ export default function UploadPage() {
                         <Badge className="ml-auto bg-pink-100 text-pink-800">1-2 giorni</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
-                        Gradity si occupa della spedizione sicura dell'opera al compratore, garantendo tracciamento e
-                        consegna rapida. Il compratore riceve l'opera con certificato di autenticità incluso.
+                        {`Gradity si occupa della spedizione sicura dell'opera al compratore, garantendo tracciamento e
+                        consegna rapida. Il compratore riceve l'opera con certificato di autenticità incluso.`}
                       </p>
                     </div>
                   </div>
@@ -333,8 +333,8 @@ export default function UploadPage() {
                         <Badge className="ml-auto bg-green-100 text-green-800">Asap</Badge>
                       </div>
                       <p className="text-gray-700 font-medium">
-                        Una volta completata la vendita, Gradity trasferisce le royalties all'artista e chiude il contratto.
-                        L'artista riceve un resoconto dettagliato delle vendite e dei guadagni.
+                        {`Una volta completata la vendita, Gradity trasferisce le royalties all'artista e chiude il contratto.
+                        L'artista riceve un resoconto dettagliato delle vendite e dei guadagni.`}
                       </p>
                     </div>
                   </div>
