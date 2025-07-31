@@ -70,7 +70,7 @@ export default function PlaquePage() {
                 <div className="relative">
                   <div className="bg-gray-100 p-8 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     <img
-                      src="aa.png"
+                      src="twinpeaks.png"
                       alt="Placca sigillata"
                       width={400}
                       height={400}

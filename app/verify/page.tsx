@@ -86,7 +86,7 @@ export default function VerifyPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1">
                   <Input
-                    placeholder="Es: AUT25-001 o QR123456789"
+                    placeholder="Es: AUT25-001"
                     value={searchCode}
                     onChange={(e) => setSearchCode(e.target.value)}
                     className="text-lg h-12"
