@@ -139,7 +139,7 @@ export default function HomePage() {
                 AUTUNNO 2025
               </h3>
               <p className="text-xl opacity-90 max-w-xl ml-auto">
-                Un\'esplosione di arte ispirata all'\autunno, con opere uniche e certificate.
+                {`Un'esplosione di arte ispirata all'autunno, con opere uniche e certificate.`}
               </p>
               <Link href="/collection">
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8">
