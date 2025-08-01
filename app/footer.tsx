@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { CheckCircle, Euro, Forward, GalleryHorizontalEnd, Instagram, Mail, Palette, User, Users, Vault } from 'lucide-react';
+import { CheckCircle, Euro, Forward, GalleryHorizontalEnd, Instagram, Mail, MessageCircleQuestionMark, Palette, User, Users, Vault } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -99,6 +99,12 @@ const Header = () => {
                     Contattaci
                   </Link>
                   <Mail className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </li>
+                <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
+                  <Link href="/faq" className="group-hover:text-lg transition-all duration-200">
+                    FAQ
+                  </Link>
+                  <MessageCircleQuestionMark className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
                 <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
                   <Link href="/about" className="group-hover:text-lg transition-all duration-200">
