@@ -8,6 +8,7 @@ import {
   Clock,
   Brush,
   User,
+  GalleryHorizontalEnd,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -63,10 +64,10 @@ export default function HomePage() {
       <Header />
 
       {/* Collezione */}
-      <section className="py-20 px-4">
+      <section className="pt-20 px-4">
         <div className="container mx-auto text-center">
           <div className="inline-block mb-6">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-xl">Collezione {currentCollection.name}</span> 
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent text-xl">Collezione {currentCollection.name} disponibile presto</span> 
           </div>
           <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
             {`L'ARTE POP`}
@@ -76,30 +77,28 @@ export default function HomePage() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             {`Opere d'arte esclusice, disegnate a mano, sigillate e certificate.`}
           </p>
-          <div className="flex flex-col sm:flex-column gap-2 justify-center mb-12">
+          <div className="flex flex-row sm:flex-column gap-2 justify-center mb-12">
             <Link href="/gallery">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg py-8 px-12"
               >
-                Esplora la Galleria
+                <GalleryHorizontalEnd className="w-5 h-5 mr-2" />Esplora la Galleria
               </Button>
             </Link>
 
             <Link href="/artists">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-12 mt-6 bg-transparent py-8 px-14"
+                className="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-lg py-8 px-12"
               >
-                <User className="w-5 h-5 mr-2" />
-                Scopri gli artisti
+                <User className="w-5 h-5 mr-2" />Scopri gli artisti
               </Button>
             </Link>
 
           </div>
 
-          {/* Collection Stats */}
+          {/* Collection Stats 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-pink-200">
               <div className="text-3xl font-bold text-pink-600 mb-2">{currentCollection.available}</div>
@@ -117,9 +116,48 @@ export default function HomePage() {
               </div>
               <div className="text-gray-600">Fino al {currentCollection.endDate}</div>
             </div>
+          </div>*/}
+        </div>
+      </section>
+
+      <section className="mb-12 mx-24 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <div className="p-8 bg-gradient-to-r from-purple-600 to-pink-600 p-2">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            {/* Left Half: Special Design */}
+            <div className="relative w-100 md:w-100 h-100 md:h-100 flex items-center justify-center overflow-hidden rounded-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+              <Image
+                src="/collection_AUT2025.jpg"
+                alt="Japanese Pattern"
+                fill
+                className="object-cover opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-red-400/60 via-transparent to-orange-400/60 z-10"></div>
+            </div>
+
+            {/* Right Half: Collection Name and Button */}
+            <div className="w-full md:w-1/2 text-center space-y-6">
+              <h3 className="text-3xl md:text-5xl font-black italic bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent leading-tight">
+                AUTUNNO 2025
+              </h3>
+              <p className="text-xl opacity-90 max-w-xl ml-auto">
+                Un'esplosione di arte ispirata al Sol Levante, con opere uniche e certificate.
+              </p>
+              <Link href="/collection">
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8">
+                  Esplora la Nuova Collezione
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
 
       {/* Featured Works */}
       <section className="pb-16 px-4 pt-2">

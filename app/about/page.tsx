@@ -12,7 +12,7 @@ export default function AboutPage() {
       name: "Gabriele Martire",
       role: "Founder & CTO",
       image: "https://images.unsplash.com/photo-1635003913011-95971abba560?q=80&w=1056&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Guida lo sviluppo tecnologico e strategico del progetto, con oltre 10 anni di esperienza nel digitale.",
+      bio: "Guida lo sviluppo tecnologico e strategico del progetto.",
       inst: "gabriele.zip",
       site: "https://gabrielemartire.github.io/",
     },
@@ -20,17 +20,18 @@ export default function AboutPage() {
       name: "Francesco Montini",
       role: "Founder & CPO",
       image: "https://images.unsplash.com/photo-1634896941598-b6b500a502a7?q=80&w=1056&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Responsabile della visione creativa e del prodotto, unisce competenze artistiche e strategia culturale.",
+      bio: "Responsabile della visione creativa del prodotto e esperto in sistemi di certificazione.",
       inst: "montins__",
       site: "https://www.linkedin.com/in/francesco-montini-44095b97/",
-    }
-    // {
-    //   name: "Alex Chen",
-    //   role: "Manager & CMO",
-    //         image: "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?q=80&w=2200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-    //   bio: "Esperto in sistemi di certificazione e blockchain",
-    // },
+    },
+    {
+      name: "Giulia Maturani",
+      role: "Art Director",
+      image: "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?q=80&w=2200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      bio: "Conduce la direzione artistica e cura le collezioni.",
+      inst: "#",
+      site: "#",
+    },
   ]
 
   const stats = [

@@ -253,11 +253,11 @@ export default function ArtworkPage({ params }: PageProps) {
                     <Share2 className="w-5 h-5" />
                   </Button>
                 </div>
-                <div className="flex items-center justify-between text-sm text-gray-600">
+                {/* <div className="flex items-center justify-between text-sm text-gray-600">
                   <span>{artwork.likes} likes</span>
                   <span>{artwork.views} visualizzazioni</span>
                   <span className="font-bold">{getStatusText(artwork.status)}</span>
-                </div>
+                </div>*/}
               </div>
 
               {/* Description */}
