@@ -5,7 +5,6 @@ import {
   Search,
   QrCode,
   Shield,
-  Clock,
   Brush,
   User,
   GalleryHorizontalEnd,
@@ -140,7 +139,7 @@ export default function HomePage() {
                 AUTUNNO 2025
               </h3>
               <p className="text-xl opacity-90 max-w-xl ml-auto">
-                Un'esplosione di arte ispirata al Sol Levante, con opere uniche e certificate.
+                Un\'esplosione di arte ispirata all'\autunno, con opere uniche e certificate.
               </p>
               <Link href="/collection">
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8">
@@ -151,13 +150,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-
-
-
-
-
-
 
       {/* Featured Works */}
       <section className="pb-16 px-4 pt-2">

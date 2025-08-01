@@ -118,18 +118,18 @@ export default function ArtworkPage({ params }: PageProps) {
     }
   }
 
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case 'available':
-        return 'Disponibile'
-      case 'sold':
-        return 'Venduto'
-      case 'auction':
-        return 'All\'asta'
-      default:
-        return 'Non disponibile'
-    }
-  }
+  // const getStatusText = (status: string) => {
+  //   switch (status) {
+  //     case 'available':
+  //       return 'Disponibile'
+  //     case 'sold':
+  //       return 'Venduto'
+  //     case 'auction':
+  //       return 'All\'asta'
+  //     default:
+  //       return 'Non disponibile'
+  //   }
+  // }
 
   return (
     <div className="min-h-screen bg-white">
