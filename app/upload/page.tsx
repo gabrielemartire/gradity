@@ -51,7 +51,7 @@ export default function UploadPage() {
                       <p className="text-lg">
                         {cardSpecs.width}mm × {cardSpecs.height}mm
                       </p>
-                      <p className="text-sm opacity-80">Standard carte da gioco collezionabili</p>
+                      <p className="text-sm opacity-80">Identiche alle carte da gioco collezionabili</p>
                     </div>
                     <div className="bg-gray-100 p-4 border-2 border-black">
                       <h4 className="font-black mb-2 uppercase">Risoluzione Digitale</h4>
@@ -259,10 +259,10 @@ export default function UploadPage() {
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between py-1 border-b border-gray-200">
                               <span className="font-medium">
-                                Spedizione in anticipo da te a gradity  
+                                Spedizione della tua opera a <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span>   
                               </span>
                             <div className="flex items-center">
-                                <Link href="https://www.poste.it/lettera/pieghi-di-libri/">
+                                <Link href="https://postedeliveryweb-retail.poste.it/postedeliveryweb/retail">
                                   <Info className="w-4 h-4 mr-2 font-bold text-purple-600" />
                                 </Link>
                             <span className="font-bold text-purple-600">da €2</span>
@@ -331,9 +331,9 @@ export default function UploadPage() {
               <div className="mt-16 bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                 <div className="text-center">
                   <h4 className="text-2xl font-black mb-4 uppercase">Tempo Totale del Processo</h4>
-                  <div className="text-4xl font-black mb-4">25-35 GIORNI</div>
+                  <div className="text-4xl font-black mb-4">10 giorni lavorativi</div>
                   <p className="text-lg opacity-90">
-                    Dalla proposta iniziale alla pubblicazione nella collezione ufficiale
+                    {`Dall'acquisto della tua opera post apertura della collezione al pubblicio`}
                   </p>
                 </div>
               </div>

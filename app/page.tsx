@@ -7,6 +7,7 @@ import {
   Shield,
   Clock,
   Brush,
+  User,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -75,7 +76,7 @@ export default function HomePage() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             {`Opere d'arte esclusice, disegnate a mano, sigillate e certificate.`}
           </p>
-          <div className="flex flex-col sm:flex-column gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-column gap-2 justify-center mb-12">
             <Link href="/gallery">
               <Button
                 size="lg"
@@ -84,17 +85,18 @@ export default function HomePage() {
                 Esplora la Galleria
               </Button>
             </Link>
-            
-            <Link href="/verify">
+
+            <Link href="/artists">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-12 mt-6 bg-transparent"
+                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-12 mt-6 bg-transparent py-8 px-14"
               >
-                <QrCode className="w-5 h-5 mr-2" />
-                Verifica Opera
+                <User className="w-5 h-5 mr-2" />
+                Scopri gli artisti
               </Button>
             </Link>
+
           </div>
 
           {/* Collection Stats */}
@@ -225,7 +227,7 @@ export default function HomePage() {
       <section className="py-16 px-4 bg-white/50">
         <div className="container mx-auto">
           <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-            Perché Gradity?
+            Perché scegliere Gradity?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-purple-50 border border-pink-200">
@@ -256,6 +258,26 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="m-4 py-20 px-4 bg-gray-900">
+        <div className="container mx-auto text-center">
+          <div className="flex items-center justify-center mb-6">
+            <QrCode className="w-10 h-10 text-cyan-400 mr-4" />
+            <h3 className="text-4xl font-bold text-white">Verifica una tua opera</h3>
+          </div>
+          <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+            Inserisci il codice di autenticità della tua opera per verificarne l'autenticità e scoprire di più sulla sua storia.
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-gray-900 text-lg px-8"
+          >
+            <Link href="/verify">
+              Verifica Opera
+            </Link>
+          </Button>
         </div>
       </section>
 
@@ -316,25 +338,6 @@ export default function HomePage() {
             </Button>
             </Link>
           </div>
-        </div>
-      </section> */}
-
-      {/* CTA Section 6 - Sfondo scuro con icona
-      <section className="py-20 px-4 bg-gray-900">
-        <div className="container mx-auto text-center">
-          <div className="flex items-center justify-center mb-6">
-            <Users className="w-10 h-10 text-cyan-400 mr-4" />
-            <h3 className="text-4xl font-bold text-white">Titolo Sezione 6</h3>
-          </div>
-          <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-            Sezione con sfondo scuro e icona. Testo da personalizzare secondo le tue esigenze.
-          </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-gray-900 text-lg px-8"
-          >
-            Pulsante Azione
-          </Button>
         </div>
       </section> */}
 
