@@ -119,11 +119,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mb-12 mx-24 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
-        <div className="p-8 bg-gradient-to-r from-purple-600 to-pink-600 p-2">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+     <section className="mb-12 mx-4 md:mx-24 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <div className="p-4 md:p-8 bg-gradient-to-r from-purple-600 to-pink-600">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
             {/* Left Half: Special Design */}
-            <div className="relative w-100 md:w-100 h-100 md:h-100 flex items-center justify-center overflow-hidden rounded-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+            <div className="relative w-64 md:w-96 h-64 md:h-96 flex items-center justify-center overflow-hidden rounded-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
               <Image
                 src="/collection_AUT2025.jpg"
                 alt="Japanese Pattern"
@@ -134,22 +134,22 @@ export default function HomePage() {
             </div>
 
             {/* Right Half: Collection Name and Button */}
-            <div className="w-full md:w-1/2 text-center space-y-6">
-              <h3 className="text-3xl md:text-5xl font-black italic bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent leading-tight">
+            <div className="w-full md:w-1/2 text-center space-y-4 md:space-y-6">
+              <h3 className="text-2xl md:text-3xl lg:text-5xl font-black italic bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent leading-tight">
                 AUTUNNO 2025
               </h3>
-              <p className="text-xl opacity-90 max-w-xl ml-auto">
+              <p className="text-base md:text-xl opacity-90 max-w-xl mx-auto px-4 md:px-0">
                 {`Un'esplosione di arte ispirata all'autunno, con opere uniche e certificate.`}
               </p>
               <Link href="/collection">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8">
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 w-full md:w-auto">
                   Esplora la Nuova Collezione
                 </Button>
               </Link>
             </div>
           </div>
         </div>
-      </section>
+    </section>
 
       {/* Featured Works */}
       <section className="pb-16 px-4 pt-2">

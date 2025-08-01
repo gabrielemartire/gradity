@@ -189,31 +189,47 @@ export default function ArtistsPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex space-x-2">
                       {artist.social.instagram && (
-                        <Link href={artist.social.instagram} target="_blank">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-                            <Instagram className="w-3 h-3 text-white" />
-                          </div>
+                       <Link href={artist.social.instagram} target="_blank">
+                            <Button
+                            size="lg"
+                            variant="outline"
+                            className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-8 bg-transparent"
+                            >
+                            <Instagram className="w-5 h-5 text-black" />
+                            </Button>
                         </Link>
                       )}
                       {artist.social.twitter && (
                         <Link href={artist.social.twitter} target="_blank">
-                          <div className="w-6 h-6 bg-black flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-                            <Twitter className="w-3 h-3 text-white" />
-                          </div>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-8 bg-transparent"
+                            >
+                                <Twitter className="w-5 h-5 text-black" />
+                            </Button>
                         </Link>
                       )}
                       {artist.social.website && (
                         <Link href={artist.social.website} target="_blank">
-                          <div className="w-6 h-6 bg-gray-600 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-                            <Globe className="w-3 h-3 text-white" />
-                          </div>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-8 bg-transparent"
+                            >
+                                <Globe className="w-3 h-3 text-black" />
+                            </Button>
                         </Link>
                       )}
                       {artist.social.email && (
                         <Link href={`mailto:${artist.social.email}`}>
-                          <div className="w-6 h-6 bg-blue-600 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-                            <Mail className="w-3 h-3 text-white" />
-                          </div>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-lg px-8 bg-transparent"
+                            >
+                                <Mail className="w-3 h-3 text-black" />
+                            </Button>
                         </Link>
                       )}
                     </div>
