@@ -268,7 +268,7 @@ export default function HomePage() {
             <h3 className="text-4xl font-bold text-white">Verifica una tua opera</h3>
           </div>
           <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-            Inserisci il codice di autenticità della tua opera per verificarne l'autenticità e scoprire di più sulla sua storia.
+            {`Inserisci il codice di autenticità della tua opera per verificarne l'autenticità e scoprire di più sulla sua storia.`}
           </p>
           <Button
             size="lg"

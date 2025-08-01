@@ -11,6 +11,7 @@ import Image from "next/image"
 import Link from "next/link"
 import artists_db from "@/db/artists"
 import Header from "@/app/header"
+import Footer from "@/app/footer"
 
 export default function ArtistsPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -244,6 +245,7 @@ export default function ArtistsPage() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   )
 }
