@@ -43,14 +43,24 @@ export default function FAQPage() {
               </AccordionItem>
               <AccordionItem value="item-2" className="border-b-2 border-gray-200">
                 <AccordionTrigger className="text-lg font-bold text-gray-800 hover:no-underline hover:text-purple-600 transition-colors">
+                  Come sono realizzate le opere d'arte?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-700 leading-relaxed pt-2 pb-4">
+                  {`Ogni opera d’arte selezionata è realizzata a mano, su supporti cartacei di varia natura scelti dall’artista: cartoncino, carta ruvida, pergamena, o materiali sperimentali. `}
+                  <Link href="/upload" className="text-purple-600 hover:underline">
+                    Scopri di più
+                  </Link>
+                  .
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-7" className="border-b-2 border-gray-200">
+                <AccordionTrigger className="text-lg font-bold text-gray-800 hover:no-underline hover:text-purple-600 transition-colors">
                   Come funziona la certificazione delle opere?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed pt-2 pb-4">
-                  {`Ogni opera d'arte selezionata viene stampata su carta fotografica premium, etichettata con un codice
-                  univoco e un QR code, e quindi sigillata in una placca trasparente protettiva. Questo processo
-                  garantisce l'integrità e l'autenticità dell'opera nel tempo. Puoi verificare un'opera dalla nostra `}
-                  <Link href="/verify" className="text-purple-600 hover:underline">
-                    pagina di verifica
+                  {`Ogni opera viene sigillata all'interno di una placca trasparente che ne impedisce manomissioni, protegge la superficie e ne garantisce lo stato originale nel tempo. L’intero sistema è pensato per offrire sicurezza, trasparenza e valore collezionistico a ogni singolo pezzo. Scopri di più sulla nostra `}
+                  <Link href="/plaque" className="text-purple-600 hover:underline">
+                    placca certificata
                   </Link>
                   .
                 </AccordionContent>
@@ -64,7 +74,7 @@ export default function FAQPage() {
                   <Link href="/gallery" className="text-purple-600 hover:underline">
                     Galleria
                   </Link>
-                  . Puoi filtrare per collezione, stato (disponibile, venduta, in asta) e cercare per titolo o artista.
+                  . Puoi filtrare per collezione, stato (disponibile, venduta) e cercare per titolo.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4" className="border-b-2 border-gray-200">

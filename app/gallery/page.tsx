@@ -74,7 +74,6 @@ export default function GalleryPage() {
                     <SelectItem value="all">Tutti</SelectItem>
                     <SelectItem value="available">Disponibili</SelectItem>
                     <SelectItem value="sold">Vendute</SelectItem>
-                    <SelectItem value="auction">In Asta</SelectItem>
                   </SelectContent>
                 </Select>
 
