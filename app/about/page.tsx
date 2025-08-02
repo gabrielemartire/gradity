@@ -60,7 +60,7 @@ export default function AboutPage() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Link href="#contattaci">
+          <Link href="mailto:info@gradity.it" className="w-full sm:w-auto">
             <Button
               size="lg"
               className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg px-8"
@@ -194,13 +194,15 @@ export default function AboutPage() {
               </p>
 
               <div className="mb-8">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 font-black uppercase text-lg px-12 py-4 mb-6"
-                >
-                  <Mail className="w-5 h-5 mr-3" />
-                  Scrivici una Email
-                </Button>
+                <Link href="mailto:contatti@gradity.it" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 font-black uppercase text-lg px-12 py-4 mb-6"
+                  >
+                    <Mail className="w-5 h-5 mr-3" />
+                    Scrivici una Email
+                  </Button>
+                </Link>
               </div>
 
               {/* Important Notice */}

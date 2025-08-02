@@ -95,7 +95,7 @@ const Header = () => {
               <h5 className="font-bold mb-4">Supporto</h5>
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
+                  <Link href="mailto:contatti@gradity.it" className="group-hover:text-lg transition-all duration-200">
                     Contattaci
                   </Link>
                   <Mail className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />

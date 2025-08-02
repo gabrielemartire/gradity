@@ -44,7 +44,7 @@ export default function UploadPage() {
             <CardContent className="p-4 sm:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-black mb-6 uppercase">L'Opera che ci invierai:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black mb-6 uppercase">{`L'Opera che ci invierai`}</h3>
                   <div className="space-y-4">
                     <div className="bg-black text-white p-4">
                       <h4 className="font-black mb-2 uppercase text-sm sm:text-base">Le Dimensioni</h4>
@@ -52,7 +52,7 @@ export default function UploadPage() {
                       <p className="text-xs sm:text-sm opacity-80">Identiche alle carte da gioco collezionabili</p>
                     </div>
                     <div className="bg-gray-100 p-4 border-2 border-black">
-                      <h4 className="font-black mb-2 uppercase text-sm sm:text-base">La "tela"</h4>
+                      <h4 className="font-black mb-2 uppercase text-sm sm:text-base">La tela</h4>
                       <p className="text-base sm:text-lg">{`Puoi dipingere su qualsiasi supporto`}</p>
                       <p className="text-xs sm:text-sm text-gray-600">{`tela da pittura, cartoncino, foglio della stampante, carta fotografica`}</p>
                     </div>

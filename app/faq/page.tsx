@@ -10,8 +10,8 @@ import Header from "@/app/header"
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
-      {/* Header */}
       <Header />
+      {/* Header */}
       <div className="container mx-auto py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -105,7 +105,7 @@ export default function FAQPage() {
               </p>
 
               <div className="mb-8">
-                <Link href="mailto:info@vaultart.com">
+                <Link href="mailto:contatti@gradity.it" className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="bg-gradient-to-r from-purple-600 to-pink-600 font-black uppercase text-lg px-12 py-4 mb-6"
