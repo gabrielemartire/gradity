@@ -43,7 +43,7 @@ export default function FAQPage() {
               </AccordionItem>
               <AccordionItem value="item-2" className="border-b-2 border-gray-200">
                 <AccordionTrigger className="text-lg font-bold text-gray-800 hover:no-underline hover:text-purple-600 transition-colors">
-                  Come sono realizzate le opere d'arte?
+                  {`Come sono realizzate le opere d'arte?`}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed pt-2 pb-4">
                   {`Ogni opera d’arte selezionata è realizzata a mano, su supporti cartacei di varia natura scelti dall’artista: cartoncino, carta ruvida, pergamena, o materiali sperimentali. `}
