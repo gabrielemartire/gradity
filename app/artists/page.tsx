@@ -12,6 +12,7 @@ import Link from "next/link"
 import artists_db from "@/db/artists"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
+import Demo from "@/app/demo"
 
 export default function ArtistsPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -77,6 +78,8 @@ export default function ArtistsPage() {
   return (
     <div className="min-h-screen bg-white">
         <Header />
+      <Demo />
+
 
       <div className="container mx-auto px-4 py-16">
         {/* Hero Section */}
@@ -166,8 +169,8 @@ export default function ArtistsPage() {
                     />
                   </Link>
                   <div className="absolute top-4 right-4">
-                    <Badge className={artist.status === 'active' ? "bg-green-100 text-green-800 font-bold" : "bg-gray-100 text-gray-800 font-bold"}>
-                      {artist.status === 'active' ? 'ATTIVO' : 'INATTIVO'}
+                    <Badge className={artist.status === 'certificato' ? "bg-green-100 text-green-800 font-bold" : "bg-gray-100 text-gray-800 font-bold"}>
+                      {artist.status === 'certificato' ? 'Certificato' : 'Non Certificato'}
                     </Badge>
                   </div>
                 </div>
@@ -261,6 +264,8 @@ export default function ArtistsPage() {
           </div>
         )}
       </div>
+      <Demo />
+
       <Footer />
     </div>
   )

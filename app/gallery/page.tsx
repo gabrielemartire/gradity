@@ -11,6 +11,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
+import Demo from "@/app/demo"
 import artworks_db from "@/db/artworks"
 
 export default function GalleryPage() {
@@ -35,6 +36,8 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
       <Header />
+      <Demo />
+
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
@@ -81,8 +84,8 @@ export default function GalleryPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Tutte</SelectItem>
-                    <SelectItem value="Autunno 2025">Autunno 2025</SelectItem>
-                    <SelectItem value="Estate 2025">Estate 2025</SelectItem>
+                    <SelectItem value="Uccelli 2025">Uccelli 2025</SelectItem>
+                    <SelectItem value="Natura 2025">Natura 2025</SelectItem>
                   </SelectContent>
                 </Select>
 
@@ -299,6 +302,7 @@ export default function GalleryPage() {
           </Link>
         </div>
       </section>
+      <Demo />
 
       <Footer/>
     </div>

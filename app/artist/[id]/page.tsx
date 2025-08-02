@@ -12,6 +12,7 @@ import artists_db from "@/db/artists"
 import artworks_db from "@/db/artworks"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
+import Demo from "@/app/demo"
 
 // Define proper types for the component props
 interface PageProps {
@@ -90,6 +91,7 @@ export default function ArtistPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <Demo />
 
       {/* Cover Image */}
       <div className="relative h-64 md:h-96 overflow-hidden border-b-4 border-black">

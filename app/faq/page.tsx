@@ -12,7 +12,7 @@ export default function FAQPage() {
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
       {/* Header */}
       <Header />
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
@@ -119,9 +119,6 @@ export default function FAQPage() {
               {/* Important Notice */}
               <div className="bg-yellow-50 border-4 border-yellow-400 p-8 max-w-3xl mx-auto">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">⚠️</span>
-                  </div>
                   <div className="text-left">
                     <h4 className="text-xl font-black mb-3 uppercase text-yellow-800">Importante: Proposte Opere</h4>
                     <p className="text-gray-700 font-medium mb-4">

@@ -13,6 +13,8 @@ import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/app/footer"
 import Header from "@/app/header"
+import Demo from "@/app/demo"
+
 
 export default function HomePage() {
   const currentCollection = {
@@ -61,6 +63,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
       <Header />
+      <Demo />
+
 
       {/* Collezione */}
       <section className="pt-20 px-4">
@@ -150,6 +154,7 @@ export default function HomePage() {
           </div>
         </div>
     </section>
+
 
       {/* Featured Works */}
       <section className="pb-16 px-4 pt-2">
@@ -370,6 +375,7 @@ export default function HomePage() {
           </div>
         </div>
       </section> */}
+      <Demo />
 
       <Footer />
     </div>

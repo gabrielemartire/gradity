@@ -13,6 +13,7 @@ import artworks_db from "@/db/artworks"
 import artists_db from "@/db/artists"
 import Header from "@/app/header"
 import Footer from "@/app/footer"
+import Demo from "@/app/demo"
 
 // Define proper types for the component props
 interface PageProps {
@@ -134,6 +135,7 @@ export default function ArtworkPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       <Header/>
+      <Demo />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-7xl mx-auto">
@@ -253,11 +255,10 @@ export default function ArtworkPage({ params }: PageProps) {
                     <Share2 className="w-5 h-5" />
                   </Button>
                 </div>
-                {/* <div className="flex items-center justify-between text-sm text-gray-600">
-                  <span>{artwork.likes} likes</span>
-                  <span>{artwork.views} visualizzazioni</span>
-                  <span className="font-bold">{getStatusText(artwork.status)}</span>
-                </div>*/}
+                <div className="flex items-center justify-between text-sm text-gray-600">
+                  {/* <span>{artwork.likes} likes</span> */}
+                  <span>SERIAL: {artwork.serial}</span>
+                </div>
               </div>
 
               {/* Description */}

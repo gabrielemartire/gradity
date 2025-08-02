@@ -17,6 +17,7 @@ import artists_db from "@/db/artists"
 interface Artwork {
   id: string;
   title: string;
+  serial: number;
   artist: number;
   collection: string;
   price: number;
@@ -47,7 +48,7 @@ export default function VerifyPage() {
   setIsLoading(true)
 
   setTimeout(() => {
-    const artwork = artworks_db.find(art => art.id === searchCode) || null;
+    const artwork = artworks_db.find(art => art.id === searchCode) || artworks_db.find(art => art.serial === Number(searchCode)) || null;
     const artist = artists_db.find(art => art.id === artwork?.artist) || null;
 
     if (artwork) {
@@ -285,58 +286,30 @@ export default function VerifyPage() {
                 <Badge
                   variant="outline"
                   className="cursor-pointer hover:bg-pink-100"
-                  onClick={() => setSearchCode("AUT25-001")}
+                  onClick={() => setSearchCode("123423")}
                 >
-                  AUT25-001
+                  serial: 123423
                 </Badge>
                 <Badge
                   variant="outline"
                   className="cursor-pointer hover:bg-purple-100"
-                  onClick={() => setSearchCode("AUT25-007")}
+                  onClick={() => setSearchCode("345656")}
                 >
-                  AUT25-007
+                  serial: 345656
                 </Badge>
                 <Badge
                   variant="outline"
                   className="cursor-pointer hover:bg-cyan-100"
-                  onClick={() => setSearchCode("AUT25-012")}
+                  onClick={() => setSearchCode("WLD25-04")}
                 >
-                  AUT25-012
+                  id: WLD25-04
                 </Badge>
                 <Badge
                   variant="outline"
                   className="cursor-pointer hover:bg-orange-100"
-                  onClick={() => setSearchCode("AUT25-018")}
+                  onClick={() => setSearchCode("WLD25-03")}
                 >
-                  AUT25-018
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="cursor-pointer hover:bg-green-100"
-                  onClick={() => setSearchCode("SPR25-001")}
-                >
-                  SPR25-001
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="cursor-pointer hover:bg-blue-100"
-                  onClick={() => setSearchCode("SPR25-007")}
-                >
-                  SPR25-007
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="cursor-pointer hover:bg-indigo-100"
-                  onClick={() => setSearchCode("SPR25-012")}
-                >
-                  SPR25-012
-                </Badge>
-                <Badge
-                  variant="outline"
-                  className="cursor-pointer hover:bg-rose-100"
-                  onClick={() => setSearchCode("SPR25-018")}
-                >
-                  SPR25-018
+                  id: WLD25-03
                 </Badge>
               </div>
             </CardContent>
