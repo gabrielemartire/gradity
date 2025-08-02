@@ -1,16 +1,64 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Palette, CreditCard, ExternalLink, Shield, Truck, ArrowLeft } from "lucide-react"
+import { Palette, CreditCard, ExternalLink, Shield, Truck, ArrowLeft, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import artwork from "@/db/artworks" // Adjust the import path as necessary
+import artists from "@/db/artists" // Import artists array
+import Header from "@/app/header"
+import Footer from "@/app/footer"
+import Demo from "@/app/demo"
+
+// Define types for better TypeScript support
+type Artwork = {
+  id: string;
+  title: string;
+  artist: number;
+  price: number;
+  owner: string;
+  collection: string;
+  description: string;
+  status: string;
+  image: string;
+  sealDate: string;
+  materials: string;
+  dimensions: string;
+  edition: string;
+  tags: string[];
+  serial: number;
+  views: number;
+  vinted_link: string;
+}
+
+type Artist = {
+  id: number;
+  name: string;
+  avatar: string;
+  place: string;
+  bio: string;
+  date: string;
+  materials: string;
+  status: string;
+  instagram: string;
+  website: string;
+  email: string;
+  twitter: string;
+  cover: string;
+}
 
 export default function PurchasePage() {
+  const params = useParams()
+  const artworkId = params.id
+  
+  const [currentArtwork, setCurrentArtwork] = useState<Artwork | null>(null)
+  const [currentArtist, setCurrentArtist] = useState<Artist | null>(null)
   const [purchaseMethod, setPurchaseMethod] = useState<"direct" | "vinted" | null>(null)
   const [paymentData, setPaymentData] = useState({
     cardNumber: "",
@@ -23,20 +71,18 @@ export default function PurchasePage() {
     zipCode: "",
   })
 
-  // Mock artwork data
-  const artwork = {
-    id: "AUT25-001",
-    title: "Neon Dreams",
-    artist: "Marco Rossi",
-    price: 299,
-    collection: "Autunno 2025",
-    image: "/placeholder.svg?height=400&width=300",
-    description: "Opera d'arte pop che rappresenta i sogni al neon della città moderna.",
-    dimensions: "63x88mm",
-    materials: "Carta fotografica premium sigillata in placca trasparente",
-    edition: "1/1 - Pezzo Unico",
-    status: "available",
-  }
+  // Find artwork and artist based on ID from URL
+  useEffect(() => {
+    if (artworkId) {
+      const foundArtwork = artwork.find((art: Artwork) => art.id === artworkId)
+      if (foundArtwork) {
+        setCurrentArtwork(foundArtwork)
+        // Find the corresponding artist
+        const foundArtist = artists.find((artist: Artist) => artist.id === foundArtwork.artist)
+        setCurrentArtist(foundArtist || null)
+      }
+    }
+  }, [artworkId])
 
   const handleDirectPurchase = () => {
     // Simulate payment processing
@@ -44,35 +90,47 @@ export default function PurchasePage() {
   }
 
   const handleVintedRedirect = () => {
-    // Redirect to Vinted listing
-    window.open("https://vinted.com/listing/vault-art-" + artwork.id, "_blank")
+    // Use the vinted_link from the artwork data or construct one
+    const vintedUrl = currentArtwork?.vinted_link && currentArtwork.vinted_link !== "#" 
+      ? currentArtwork.vinted_link 
+      : `https://vinted.com/${currentArtwork?.vinted_link}`
+    window.open(vintedUrl, "_blank")
+  }
+
+  // Loading state
+  if (!currentArtwork) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mx-auto mb-4">
+            <Palette className="w-8 h-8 text-white animate-pulse" />
+          </div>
+          <h2 className="text-2xl font-black">Caricamento...</h2>
+        </div>
+      </div>
+    )
+  }
+
+  // If artwork not found
+  if (!currentArtwork) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-black mb-4">Opera non trovata</h2>
+          <Link href="/gallery">
+            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 font-black uppercase">
+              Torna alla Galleria
+            </Button>
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b-4 border-black bg-white">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
-                <Palette className="w-7 h-7 text-white" />
-              </div>
-              <h1 className="text-3xl font-black tracking-tight">gradity</h1>
-            </Link>
-            <Link href="/gallery">
-              <Button
-                variant="outline"
-                className="border-2 border-black bg-transparent font-bold uppercase flex items-center space-x-2"
-              >
-                <span className="opacity-0 hover:opacity-100 transition-opacity">🖼️</span>
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                <span>Torna alla Galleria</span>
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header />
+      <Demo />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
@@ -80,50 +138,51 @@ export default function PurchasePage() {
             {/* Artwork Details */}
             <div>
               <div className="mb-8">
-                <Link href={`/artwork/${artwork.id}`}>
-                  <div className="relative group cursor-pointer">
-                    <Image
-                      src={artwork.image || "/placeholder.svg"}
-                      alt={artwork.title}
-                      width={400}
-                      height={560}
-                      className="w-full max-w-md mx-auto border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-transform group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
-                  </div>
-                </Link>
+                <Image
+                  src={currentArtwork.image}
+                  alt={currentArtwork.title}
+                  width={400}
+                  height={560}
+                  className="w-full max-w-md mx-auto border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-transform group-hover:scale-105"
+                />
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <Badge variant="outline" className="mb-4 font-mono text-sm">
-                    {artwork.id}
+                  <Badge variant="outline" className="mb-4 font-mono text-sm mr-2">
+                    {currentArtwork.id}
                   </Badge>
-                  <h1 className="text-4xl font-black mb-4 uppercase">{artwork.title}</h1>
-                  <p className="text-xl text-gray-600 mb-2">di {artwork.artist}</p>
                   <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                    {artwork.collection}
+                    {currentArtwork.collection}
                   </Badge>
+                  <h1 className="text-4xl font-black mb-4 uppercase">{currentArtwork.title}</h1>
+                  <p className="text-xl text-gray-600 mb-2">
+                    di {currentArtist ? currentArtist.name : `Artista ${currentArtwork.artist}`}
+                  </p>
                 </div>
 
-                <div className="text-4xl font-black text-purple-600">€{artwork.price}</div>
-
-                <p className="text-gray-700 font-medium leading-relaxed">{artwork.description}</p>
+                <p className="text-gray-700 font-medium leading-relaxed">{currentArtwork.description}</p>
 
                 <div className="bg-gray-50 p-6 border-2 border-gray-200">
-                  <h3 className="font-black text-lg mb-4 uppercase">Specifiche Carta</h3>
+                  <h3 className="font-black text-lg mb-4 uppercase">Specifiche Opera</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="font-medium">Dimensioni:</span>
-                      <span>{artwork.dimensions}</span>
+                      <span>{currentArtwork.dimensions}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Materiali:</span>
-                      <span>{artwork.materials}</span>
+                      <span>{currentArtwork.materials}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Edizione:</span>
-                      <span>{artwork.edition}</span>
+                      <span>{currentArtwork.edition}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Stato:</span>
+                      <span className={currentArtwork.status === 'sold' ? 'text-red-600 font-bold' : 'text-green-600 font-bold'}>
+                        {currentArtwork.status === 'sold' ? 'Venduto' : 'Disponibile'}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -133,28 +192,45 @@ export default function PurchasePage() {
             {/* Purchase Options */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-black mb-8 uppercase">Scegli Metodo di Acquisto</h2>
+                <Link href={`/artwork/${currentArtwork.id}`}>
+                  <Button
+                    variant="outline"
+                    className="border-2 border-black bg-transparent font-bold uppercase flex items-center space-x-2 mb-6 cursor-pointer"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    <span>Indietro</span>
+                  </Button>
+                </Link>
 
-                {!purchaseMethod && (
+                {currentArtwork.status === 'sold' && (
+                  <Card className="border-4 border-red-500 shadow-[4px_4px_0px_0px_rgba(239,68,68,1)]">
+                    <CardContent className="p-8 text-center">
+                      <div className="text-red-600 text-2xl font-black mb-4 uppercase">Opera Venduta</div>
+                      <p className="text-gray-600 mb-6">Questa opera è già stata venduta e non è più disponibile.</p>
+                      <Link href="/gallery">
+                        <Button className="bg-gradient-to-r from-purple-600 to-pink-600 font-black uppercase">
+                          Esplora Altre Opere
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Purchase options - only show if not sold */}
+                {currentArtwork.status !== 'sold' && !purchaseMethod && (
                   <div className="space-y-6">
+                    <h2 className="text-3xl font-black uppercase">Scegli Metodo di Acquisto</h2>
                     <Card
-                      className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all"
-                      onClick={() => setPurchaseMethod("direct")}
+                      className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] opacity-50 pointer-events-none"
                     >
                       <CardContent className="p-8">
                         <div className="flex items-center space-x-4">
-                          <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
-                            <CreditCard className="w-8 h-8 text-white" />
+                          <div className="w-16 h-16 bg-gray-600 flex items-center justify-center">
+                            <Clock className="w-8 h-8 text-white" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-2xl font-black mb-2 uppercase">Acquisto Diretto</h3>
-                            <p className="text-gray-600 font-medium">
-                              Paga con carta di credito e ricevi la carta certificata a casa
-                            </p>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-2xl font-black text-purple-600">€{artwork.price}</div>
-                            <div className="text-sm text-gray-500">+ spedizione gratuita</div>
+                            <h3 className="text-2xl font-black mb-2 uppercase">Acquisto diretto in piattaforma</h3>
+                            <p className="text-gray-600 font-medium">In arrivo</p>
                           </div>
                         </div>
                       </CardContent>
@@ -176,7 +252,7 @@ export default function PurchasePage() {
                             </p>
                           </div>
                           <div className="text-right">
-                            <div className="text-2xl font-black text-black">€{artwork.price}</div>
+                            <div className="text-2xl font-black text-black">€{currentArtwork.price}</div>
                             <div className="text-sm text-gray-500">+ commissioni Vinted</div>
                           </div>
                         </div>
@@ -186,7 +262,7 @@ export default function PurchasePage() {
                 )}
 
                 {/* Direct Purchase Form */}
-                {purchaseMethod === "direct" && (
+                {purchaseMethod === "direct" && currentArtwork.status !== 'sold' && (
                   <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                     <CardHeader className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
                       <CardTitle className="text-2xl font-black uppercase">Acquisto Diretto</CardTitle>
@@ -289,7 +365,7 @@ export default function PurchasePage() {
                         <div className="bg-gray-50 p-6 border-2 border-gray-200">
                           <div className="flex justify-between items-center mb-4">
                             <span className="font-bold">Subtotale:</span>
-                            <span>€{artwork.price}</span>
+                            <span>€{currentArtwork.price}</span>
                           </div>
                           <div className="flex justify-between items-center mb-4">
                             <span className="font-bold">Spedizione:</span>
@@ -298,7 +374,7 @@ export default function PurchasePage() {
                           <Separator className="bg-gray-300 my-4" />
                           <div className="flex justify-between items-center text-xl font-black">
                             <span>TOTALE:</span>
-                            <span>€{artwork.price}</span>
+                            <span>€{currentArtwork.price}</span>
                           </div>
                         </div>
 
@@ -324,7 +400,7 @@ export default function PurchasePage() {
                 )}
 
                 {/* Vinted Purchase */}
-                {purchaseMethod === "vinted" && (
+                {purchaseMethod === "vinted" && currentArtwork.status !== 'sold' && (
                   <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                     <CardHeader className="bg-black text-white">
                       <CardTitle className="text-2xl font-black uppercase">Acquisto tramite Vinted</CardTitle>
@@ -361,13 +437,13 @@ export default function PurchasePage() {
                           <Button
                             onClick={() => setPurchaseMethod(null)}
                             variant="outline"
-                            className="border-2 border-black bg-transparent font-bold uppercase flex-1"
+                            className="cursor-pointer border-2 border-black bg-transparent font-bold uppercase flex-1"
                           >
                             Indietro
                           </Button>
                           <Button
                             onClick={handleVintedRedirect}
-                            className="bg-black text-white font-black uppercase flex-1"
+                            className="bg-black text-white font-black uppercase flex-1 cursor-pointer"
                           >
                             Vai a Vinted
                           </Button>
@@ -381,6 +457,7 @@ export default function PurchasePage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
