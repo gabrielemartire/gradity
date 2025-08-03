@@ -146,7 +146,15 @@ export default function HomePage() {
                   />
                   <div className="absolute top-4 right-4">
                       <div className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <span className="text-black font-black text-lg">●</span>
+                        <span className="text-black font-black text-lg">
+                          <Image
+                            src="/purple_logo.png"
+                            alt="Gradity Logo"
+                            width={25}
+                            height={25}
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </span>
                       </div>
                   </div>
                   <div className="absolute top-4 left-4">

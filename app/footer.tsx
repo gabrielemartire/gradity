@@ -61,6 +61,13 @@ const Header = () => {
                 <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-600"></div>
+                    {/* <Image
+                      src="/collection_AUT2025.jpg"
+                      alt="AUT25"
+                      width={25}
+                      height={25}
+                      className="object-cover"
+                    /> */}
                     <Link href="/gallery?collection=EST-2026" className="group-hover:text-lg transition-all duration-200">
                       Estate 2026
                     </Link>
@@ -125,7 +132,7 @@ const Header = () => {
                   <Users className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
                 <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
-                  <Link href="#" className="group-hover:text-lg transition-all duration-200">
+                  <Link href="https://www.vinted.it/member/282943677-gradity" className="group-hover:text-lg transition-all duration-200">
                     Acquista su Vinted
                   </Link>
                   <Euro className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -140,7 +147,7 @@ const Header = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 gradity.it — Tutti i diritti riservati.</p>
+            <p>&copy; 2025 gradity.it</p>
           </div>
         </div>
       </footer>
