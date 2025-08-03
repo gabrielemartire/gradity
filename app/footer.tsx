@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { CheckCircle, Euro, Forward, GalleryHorizontalEnd, Instagram, Mail, MessageCircleQuestionMark, Palette, User, Users, Vault } from 'lucide-react';
+import { CheckCircle, Euro, Forward, GalleryHorizontalEnd, Instagram, Mail, MessageCircleQuestionMark, User, Users, Vault } from 'lucide-react';
+import Image from "next/image"
 
 const Header = () => {
   return (
@@ -8,12 +9,23 @@ const Header = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Palette className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">gradity</span>
-              </div>
+            <div className="flex items-center space-x-2">
+              <Link
+                href="/"
+                className="flex items-center space-x-2 text-gray-700 hover:text-pink-600 transition-colors font-bold tracking-wide cursor-pointer"
+              >
+                <Image
+                  src="/purple_logo.png"
+                  alt="Gradity Logo"
+                  width={50}
+                  height={50}
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                  gradity
+                </h1>
+              </Link>
+            </div>
               <p className="text-gray-400">La piattaforma per arte pop certificata e collezionabile.</p>
             </div>
             <div>
