@@ -36,17 +36,16 @@ const Header = () => {
                   <span>Torna alla Galleria</span>
                 </Button>
               </Link> */}
+              <Link href="/submit">
+                <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 font-bold uppercase tracking-wide">
+                  Proponi Opera
+                </Button>
+              </Link>
               <Link
                 href="/gallery"
                 className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
               >
                 Galleria
-              </Link>
-              <Link
-                href="/plaque"
-                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
-              >
-                La Placca
               </Link>
               <Link
                 href="/artists"
@@ -55,10 +54,10 @@ const Header = () => {
                 Artisti
               </Link>
               <Link
-                href="/about"
+                href="/plaque"
                 className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
               >
-                Chi Siamo
+                La Placca
               </Link>
               <Link
                 href="/verify"
@@ -66,10 +65,11 @@ const Header = () => {
               >
                 Verifica
               </Link>
-              <Link href="/submit">
-                <Button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 font-bold uppercase tracking-wide">
-                  Proponi Opera
-                </Button>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
+              >
+                Chi Siamo
               </Link>
             </nav>
           </div>

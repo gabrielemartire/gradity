@@ -14,7 +14,8 @@ import Link from "next/link"
 import Footer from "@/app/footer"
 import Header from "@/app/header"
 import Demo from "@/app/demo"
-
+import artworks_db from "@/db/artworks" // Adjust the import path as necessary
+import artists from "@/db/artists" // Import artists array
 
 export default function HomePage() {
   const currentCollection = {
@@ -25,40 +26,7 @@ export default function HomePage() {
     endDate: "8 Dicembre 2025",
   }
 
-  const featuredWorks = [
-    {
-      id: "AUT25-001",
-      title: "Te Manu o te Rangi",
-      artist: "Aroha Te",
-      status: "sold",
-      price: 45,
-      image: "https://images.unsplash.com/photo-1747945872974-4d814f768def?q=80&w=963&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: "AUT25-007",
-      title: "Moana Kōtare",
-      artist: "Rongo Pikiatua",
-      status: "sold",
-      price: 45,
-      image: "https://images.unsplash.com/photo-1709805902570-fcb5c9d99d5e?q=80&w=989&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: "AUT25-012",
-      title: "Whakarere Kārearea",
-      artist: "Hinemoana Raukura",
-      price: 45,
-      status: "sold",
-      image: "https://images.unsplash.com/photo-1709802191476-5a417cb6b971?q=80&w=950&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: "AUT25-018",
-      title: "Tūī Karanga",
-      artist: "Te Rerehua Wikitōria",
-      price: 45,
-      status: "sold",
-      image: "https://images.unsplash.com/photo-1709235175253-d6c1892e1d39?q=80&w=997&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ]
+  const featuredWorks = artworks_db.filter((work) => work.status === "sold").sort(() => 0.5 - Math.random()).slice(0, 4)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
@@ -177,21 +145,9 @@ export default function HomePage() {
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4">
-                    {work.status === "available" && (
                       <div className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         <span className="text-black font-black text-lg">●</span>
                       </div>
-                    )}
-                    {work.status === "sold" && (
-                      <div className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <span className="text-black font-black text-lg">○</span>
-                      </div>
-                    )}
-                    {work.status === "auction" && (
-                      <div className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] animate-pulse">
-                        <span className="text-black font-black text-lg">◐</span>
-                      </div>
-                    )}
                   </div>
                   <div className="absolute top-4 left-4">
                     <Badge variant="outline" className="bg-white/90 text-gray-700 font-mono text-xs">
@@ -201,22 +157,8 @@ export default function HomePage() {
                 </div>
                 <CardContent className="p-6">
                   <h4 className="font-bold text-xl mb-2">{work.title}</h4>
-                  <p className="text-gray-600 mb-4">di {work.artist}</p>
-                  <div className="flex items-center justify-between">
-                    {/* <span className="text-2xl font-bold text-pink-600">€{work.price}</span> */}
-                    {work.status === "available" && (
-                      <Link href={`/purchase/${work.id}`}>
-                        <Button size="sm" className="bg-gradient-to-r from-pink-500 to-purple-600">
-                          Acquista
-                        </Button>
-                      </Link>
-                    )}
-                    {work.status === "auction" && (
-                      <Button size="sm" variant="outline" className="border-orange-500 text-orange-600 bg-transparent">
-                        Partecipa
-                      </Button>
-                    )}
-                  </div>
+                  <p className="text-gray-600 mb-2">di {artists.find(artist => artist.id === work.artist)?.name || "Artista Sconosciuto"}</p>
+                  <p className="text-purple-800 mb-2">{work.collection}</p>
                 </CardContent>
               </Card>
             ))}

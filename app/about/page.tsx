@@ -11,7 +11,7 @@ export default function AboutPage() {
     {
       name: "Gabriele Martire",
       role: "Founder & CTO",
-      image: "https://images.unsplash.com/photo-1635003913011-95971abba560?q=80&w=1056&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://images.unsplash.com/photo-1740252117013-4fb21771e7ca?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "Guida lo sviluppo tecnologico e strategico del progetto.",
       inst: "gabriele.zip",
       site: "https://gabrielemartire.github.io/",
@@ -19,7 +19,7 @@ export default function AboutPage() {
     {
       name: "Francesco Montini",
       role: "Founder & CPO",
-      image: "https://images.unsplash.com/photo-1634896941598-b6b500a502a7?q=80&w=1056&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://images.unsplash.com/photo-1740252117070-7aa2955b25f8?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "Responsabile della visione creativa del prodotto e esperto in sistemi di certificazione.",
       inst: "montins__",
       site: "https://www.linkedin.com/in/francesco-montini-44095b97/",
@@ -27,11 +27,27 @@ export default function AboutPage() {
     {
       name: "Giulia Maturani",
       role: "Art Director",
-      image: "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?q=80&w=2200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://images.unsplash.com/photo-1740252117027-4275d3f84385?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       bio: "Conduce la direzione artistica e cura le collezioni.",
       inst: "#",
       site: "#",
     },
+    // {
+    //   name: "Mario Rossi",
+    //   role: "Marketing Specialist",
+    //   image: "https://images.unsplash.com/photo-1740252117012-bb53ad05e370?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   bio: "Gestisce le strategie di marketing e comunicazione.",
+    //   inst: "#",
+    //   site: "#",
+    // },
+    // {
+    //   name: "Luca Bianchi",
+    //   role: "Community Manager",
+    //   image: "https://images.unsplash.com/photo-1740252117044-2af197eea287?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   bio: "Si occupa della gestione della community e delle relazioni con gli artisti.",
+    //   inst: "#",
+    //   site: "#",
+    // },
   ]
 
   const stats = [
