@@ -101,7 +101,7 @@ export default function UploadPage() {
                       </p>
                     </div>
                     <a
-                      href="https://forms.google.com/vault-art-submission"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSecyH4Hp9YNpPckiZEiW0JggVp3ze3C34nxPvMGqGniurfA9w/viewform?usp=dialog"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block"
@@ -129,7 +129,7 @@ export default function UploadPage() {
                     <div>
                       <h3 className="text-xl sm:text-2xl font-black mb-4 uppercase text-gray-600">Upload Diretto</h3>
                       <div className="bg-yellow-100 border-2 border-yellow-400 p-3 sm:p-4 mb-4 inline-block">
-                        <span className="text-yellow-800 font-black uppercase text-base sm:text-lg">COMING SOON</span>
+                        <span className="text-yellow-800 font-black uppercase text-base sm:text-lg">IN ARRIVO</span>
                       </div>
                       <p className="text-sm sm:text-base text-gray-600 mb-6 font-medium">
                         Stiamo sviluppando un sistema di upload diretto che permetterà di caricare le opere direttamente
@@ -278,8 +278,8 @@ export default function UploadPage() {
                             </div>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-gray-200">
-                            <span className="font-medium mb-1 sm:mb-0">Commissioni per la Certificazione (10%)</span>
-                            <span className="font-bold text-red-600">-€10</span>
+                            <span className="font-medium mb-1 sm:mb-0">Commissioni per la Certificazione (15%)</span>
+                            <span className="font-bold text-red-600">-€15</span>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-gray-200">
                             <span className="font-medium mb-1 sm:mb-0">Marketing & Promozione (5%)</span>
@@ -290,8 +290,8 @@ export default function UploadPage() {
                             <span className="font-bold text-gray-600">a spese del compratore</span>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-3 bg-gradient-to-r from-purple-100 to-pink-100 px-3 border-2 border-purple-400 font-black text-base sm:text-lg">
-                            <span className="uppercase mb-1 sm:mb-0">Il Tuo Guadagno (~85%)</span>
-                            <span className="text-purple-600">€85</span>
+                            <span className="uppercase mb-1 sm:mb-0">Il Tuo Guadagno (~80%)</span>
+                            <span className="text-purple-600">€80</span>
                           </div>
                         </div>
                       </div>
