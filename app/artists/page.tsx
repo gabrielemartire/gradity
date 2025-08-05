@@ -90,7 +90,7 @@ export default function ArtistsPage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">ARTISTI</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
-            Scopri tutti gli artisti della community <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span> e le loro opere esclusive
+            Scopri tutti gli artisti della community <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span>
           </p>
         </div>
 

@@ -58,9 +58,9 @@ export default function FAQPage() {
                   Come funziona la certificazione delle opere?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-700 leading-relaxed pt-2 pb-4">
-                  {`Ogni opera viene sigillata all'interno di una placca trasparente che ne impedisce manomissioni, protegge la superficie e ne garantisce lo stato originale nel tempo. L’intero sistema è pensato per offrire sicurezza, trasparenza e valore collezionistico a ogni singolo pezzo. Scopri di più sulla nostra `}
+                  {`Ogni opera viene sigillata all'interno di un case protettivo trasparente che ne impedisce manomissioni, protegge la superficie e ne garantisce lo stato originale nel tempo. L’intero sistema è pensato per offrire sicurezza, trasparenza e valore collezionistico a ogni singolo pezzo. Scopri di più sulla nostra `}
                   <Link href="/plaque" className="text-purple-600 hover:underline">
-                    placca certificata
+                    Case protettivo
                   </Link>
                   .
                 </AccordionContent>

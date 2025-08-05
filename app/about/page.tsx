@@ -7,23 +7,42 @@ import Footer from "@/app/footer"
 import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
-  const team = [
+  const board = [
     {
       name: "Gabriele Martire",
       role: "Founder & CTO",
       image: "https://images.unsplash.com/photo-1740252117013-4fb21771e7ca?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Guida lo sviluppo tecnologico e strategico del progetto.",
+      bio: "Responsabile dello sviluppo tecnologica.",
       inst: "gabriele.zip",
       site: "https://gabrielemartire.github.io/",
     },
     {
       name: "Francesco Montini",
-      role: "Founder & CPO",
+      role: "Founder & CFO",
       image: "https://images.unsplash.com/photo-1740252117070-7aa2955b25f8?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      bio: "Responsabile della visione creativa del prodotto e esperto in sistemi di certificazione.",
+      bio: "Responsabile della gestione finanziaria e bilanci.",
       inst: "montins__",
       site: "https://www.linkedin.com/in/francesco-montini-44095b97/",
     },
+    // {
+    //   name: "Nicholas Pennesi",
+    //   role: "Founder & COO",
+    //   image: "https://images.unsplash.com/photo-1740252117012-bb53ad05e370?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   bio: "Responsabile delle operazioni di produzione e logistica",
+    //   inst: "#",
+    //   site: "#",
+    // },
+    // {
+    //   name: "Luca Bianchi",
+    //   role: "CMO",
+    //   image: "https://images.unsplash.com/photo-1740252117044-2af197eea287?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   bio: "Responsabile del marketing, della comunicazione e del posizionamento del brand.",
+    //   inst: "#",
+    //   site: "#",
+    // },
+  ]
+
+  const creativeTeam = [
     {
       name: "Giulia Maturani",
       role: "Art Director",
@@ -31,23 +50,7 @@ export default function AboutPage() {
       bio: "Conduce la direzione artistica e cura le collezioni.",
       inst: "#",
       site: "#",
-    },
-    // {
-    //   name: "Mario Rossi",
-    //   role: "Marketing Specialist",
-    //   image: "https://images.unsplash.com/photo-1740252117012-bb53ad05e370?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    //   bio: "Gestisce le strategie di marketing e comunicazione.",
-    //   inst: "#",
-    //   site: "#",
-    // },
-    // {
-    //   name: "Luca Bianchi",
-    //   role: "Community Manager",
-    //   image: "https://images.unsplash.com/photo-1740252117044-2af197eea287?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    //   bio: "Si occupa della gestione della community e delle relazioni con gli artisti.",
-    //   inst: "#",
-    //   site: "#",
-    // },
+    }
   ]
 
   const stats = [
@@ -159,14 +162,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Team */}
+        {/* board */}
         <Card className="mb-20 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
           <CardContent className="p-12 pt-6">
-            <div className="text-center pb-4">
-              <h3 className="text-4xl font-black mb-4 uppercase">il Team</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {team.map((member, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {board.map((member, index) => (
                 <div key={index} className="text-center">
                   <div className="w-32 h-32 mx-auto mb-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
                     <Image
@@ -197,6 +197,40 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+            <div className="text-center pb-4 mt-12"><h4 className="text-2xl font-black mb-4 uppercase">Team Creativo</h4></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {creativeTeam.map((member, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+                    <Image
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-black mb-2 uppercase">{member.name}</h4>
+                  <p className="text-lg font-bold text-gray-600 mb-4">{member.role}</p>
+                  <p className="text-gray-700 font-medium">{member.bio}</p>
+
+                  {/* Social Icons */}
+                  <div className="flex justify-center space-x-3 mt-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                      <Link href={`https://instagram.com/${member.inst.toLowerCase()}`} target="_blank">
+                        <Instagram className="w-4 h-4 text-white" />
+                      </Link>
+                    </div>
+                    <div className="w-8 h-8 bg-black flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                      <Link href={`${member.site.toLowerCase()}`} target="_blank">
+                        <Globe className="w-4 h-4 text-white" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </CardContent>
         </Card>
 

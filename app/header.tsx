@@ -52,7 +52,7 @@ const Header = () => {
                 href="/plaque"
                 className="text-gray-700 hover:text-pink-600 transition-colors font-bold uppercase tracking-wide"
               >
-                La Placca
+                Case Protettivo
               </Link>
               <Link
                 href="/verify"

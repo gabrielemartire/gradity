@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+// import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover" // Import Popover components
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Badge } from "@/components/ui/badge"
 import { Upload, Vault, Info, Eye, CheckCircle, Shield, DollarSign, Truck } from "lucide-react"
 import Header from "@/app/header"
@@ -219,7 +221,7 @@ export default function UploadPage() {
                         <Badge className="self-start sm:ml-auto bg-pink-100 text-gray-800 text-xs">tempo tecnico di spedizione</Badge>
                       </div>
                       <p className="text-sm sm:text-base text-gray-700 font-medium">
-                        Se selezionata, sarà possibile inviare fisicamente il prodotto disegnato e dipinto a Gradity per la certificazione.
+                        Se selezionata, sarà possibile inviare fisicamente il prodotto disegnato e dipinto a Gradity per la certificazione e la vendita.
                       </p>
                     </div>
                   </div>
@@ -238,7 +240,7 @@ export default function UploadPage() {
                         <Badge className="self-start sm:ml-auto bg-pink-100 text-gray-800 text-xs">entro 3 giorni</Badge>
                       </div>
                       <p className="text-sm sm:text-base text-gray-700 font-medium">
-                        Appena riceviamo la tua opera, essa sarà etichettata con codice univoco, quindi sigillata nella placca
+                        Appena ricevuta la tua opera, essa sarà etichettata con un codice univoco e sigillata nel case protettivo
                         trasparente protettiva. In concomitanza avverrà la registrazione nel database di autenticità.
                       </p>
                     </div>
@@ -258,7 +260,7 @@ export default function UploadPage() {
                         <Badge className="self-start sm:ml-auto bg-pink-100 text-gray-800 text-xs">data apertura della Collezione</Badge>
                       </div>
                       <p className="text-sm sm:text-base text-gray-700 font-medium mb-4">
-                        Una volta aperte le vendite delle opere, i compratori potrenno acquistare le opere tramite vinted, agli artisti sarà inviato un resoconto dettagliato finale.
+                        Una volta aperte le vendite delle opere, i compratori potrenno acquistare le opere tramite Vinted.
                       </p>
                       {/* Financial Breakdown Table - Mobile Optimized */}
                       <div className="bg-gray-50 border-2 border-gray-300 p-3 sm:p-4">
@@ -274,15 +276,46 @@ export default function UploadPage() {
                               <Link href="https://postedeliveryweb-retail.poste.it/postedeliveryweb/retail">
                                 <Info className="w-3 sm:w-4 h-3 sm:h-4 mr-2 font-bold text-purple-600" />
                               </Link>
-                              <span className="font-bold text-purple-600">da €2</span>
+                              <span className="font-bold text-purple-600">da €3</span>
                             </div>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-gray-200">
-                            <span className="font-medium mb-1 sm:mb-0">Commissioni per la Certificazione (15%)</span>
+                            <div className="flex items-center">
+                              <span className="font-medium mb-1 sm:mb-0">
+                                Commissioni per la Certificazione (15%)
+                              </span>
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <Info className="w-3 sm:w-4 h-3 sm:h-4 ml-2 font-bold text-purple-600 cursor-pointer" />
+                                </PopoverTrigger>
+                                <PopoverContent className="w-64 text-sm p-2">
+                                  gradity si occupa della certificazione e sigillatura dell'opera, garantendo la massima cura dell'opera.
+                                </PopoverContent>
+                              </Popover>
+                            </div>
                             <span className="font-bold text-red-600">-€15</span>
                           </div>
+                            <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-gray-200">
+                              <div className="flex items-center">
+                            
+                                <span className="font-medium mb-1 sm:mb-0">
+                                  Assicurazione sulla vendita (10%)
+                                </span>
+                                <Popover>
+                                  <PopoverTrigger asChild>
+                                    <Info className="w-3 sm:w-4 h-3 sm:h-4 ml-2 font-bold text-purple-600 cursor-pointer" />
+                                  </PopoverTrigger>
+                                  <PopoverContent className="w-64 text-sm p-2">
+                                    gradity offre un'assicurazione sulla vendita per tutelare l'artista.
+                                  </PopoverContent>
+                                </Popover>
+                            </div>                            
+                            <span className="font-bold text-red-600">-€10</span>
+                          </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-gray-200">
-                            <span className="font-medium mb-1 sm:mb-0">Marketing & Promozione (5%)</span>
+                            <span className="font-medium mb-1 sm:mb-0">
+                              Marketing & Promozione (5%)
+                            </span>
                             <span className="font-bold text-red-600">-€5</span>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-gray-200">
@@ -290,8 +323,8 @@ export default function UploadPage() {
                             <span className="font-bold text-gray-600">a spese del compratore</span>
                           </div>
                           <div className="flex flex-col sm:flex-row sm:justify-between py-3 bg-gradient-to-r from-purple-100 to-pink-100 px-3 border-2 border-purple-400 font-black text-base sm:text-lg">
-                            <span className="uppercase mb-1 sm:mb-0">Il Tuo Guadagno (~80%)</span>
-                            <span className="text-purple-600">€80</span>
+                            <span className="uppercase mb-1 sm:mb-0">Il Tuo Guadagno (~70%)</span>
+                            <span className="text-purple-600">€70</span>
                           </div>
                         </div>
                       </div>

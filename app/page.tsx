@@ -19,8 +19,7 @@ import artists from "@/db/artists" // Import artists array
 
 export default function HomePage() {
   const currentCollection = {
-    name: "Autunno 2025",
-    description: "35 opere esclusive selezionate per la stagione autunnale",
+    name: "Giappone 2025",
     totalWorks: 8,
     available: 2,
     endDate: "8 Dicembre 2025",
@@ -34,7 +33,7 @@ export default function HomePage() {
       <Demo />
 
 
-      {/* Collezione */}
+      {/* Hero Section */}
       <section className="pt-20 px-4">
         <div className="container mx-auto text-center">
           <div className="inline-block mb-6">
@@ -91,10 +90,10 @@ export default function HomePage() {
         </div>
       </section>
 
-     <section className="mb-12 mx-4 md:mx-24 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+      {/* Collection coming soon */}
+      <section className="mb-12 mx-4 md:mx-24 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
         <div className="p-4 md:p-8 bg-gradient-to-r from-purple-600 to-pink-600">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
-            {/* Left Half: Special Design */}
             <div className="relative w-64 md:w-96 h-64 md:h-96 flex items-center justify-center overflow-hidden rounded-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
               <Image
                 src="/collection_AUT2025.jpg"
@@ -102,16 +101,15 @@ export default function HomePage() {
                 fill
                 className="object-cover opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-red-400/60 via-transparent to-orange-400/60 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-grey-400/60 via-transparent to-red-400/60 z-10"></div>
             </div>
 
-            {/* Right Half: Collection Name and Button */}
             <div className="w-full md:w-1/2 text-center space-y-4 md:space-y-6">
               <h3 className="text-2xl md:text-3xl lg:text-5xl font-black italic bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent leading-tight">
-                AUTUNNO 2025
+                {currentCollection.name}
               </h3>
               <p className="text-base md:text-xl opacity-90 max-w-xl mx-auto px-4 md:px-0">
-                {`Un'esplosione di arte ispirata all'autunno, con opere uniche e certificate.`}
+                {`Un'esplosione di arte ispirata al Giappone, con opere uniche e certificate.`}
               </p>
               <Link href="/collection">
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 w-full md:w-auto">
@@ -124,7 +122,7 @@ export default function HomePage() {
     </section>
 
 
-      {/* Featured Works */}
+      {/* Opere di precedenti collezioni */}
       <section className="pb-16 px-4 pt-2">
         <div className="container mx-auto">
           <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -150,7 +148,7 @@ export default function HomePage() {
                           <Image
                             src="/purple_logo.png"
                             alt="Gradity Logo"
-                            width={25}
+                            width={2}
                             height={25}
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
@@ -174,7 +172,7 @@ export default function HomePage() {
         </div>
       </section>
 
-        {/* Stats Overview 
+      {/* Stats Overview 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           <Card className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center">
             <CardContent className="p-6">
@@ -208,7 +206,7 @@ export default function HomePage() {
           </Card>
         </div>*/}
 
-      {/* Features */}
+      {/* Perché scegliere Gradity? */}
       <section className="py-16 px-4 bg-white/50">
         <div className="container mx-auto">
           <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -246,6 +244,8 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      {/* Verifica una tua opera */}
       <section className="m-4 py-20 px-4 bg-gray-900">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
@@ -266,12 +266,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section 4 - Colore più tenue con icona */}
+      {/* il Case Protettivo */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
             <Shield className="w-10 h-10 text-purple-600 mr-4" />
-            <h3 className="text-4xl font-bold text-gray-900">la Placca</h3>
+            <h3 className="text-4xl font-bold text-gray-900">il Case Protettivo</h3>
           </div>
           <p className="text-xl mb-8 text-gray-700 max-w-2xl mx-auto">
             Il nostro sistema più avanzato di certificazione per arte contemporanea. Ogni opera è sigillata, protetta e verificabile per sempre.
@@ -284,7 +284,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Sei un Artista? */}
       <section className="py-20 px-4 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600">
         <div className="container mx-auto text-center text-white">
           <h3 className="text-4xl font-bold mb-6">Sei un Artista?</h3>

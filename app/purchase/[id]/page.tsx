@@ -253,7 +253,10 @@ export default function PurchasePage() {
                           </div>
                           <div className="text-right">
                             <div className="text-2xl font-black text-black">€{currentArtwork.price}</div>
-                            <div className="text-sm text-gray-500">+ commissioni Vinted</div>
+                            <div className="text-sm text-gray-500">
+                              + commissioni Vinted: €{(currentArtwork.price * 0.05 + 0.7).toFixed(2)}
+                              <span className="block text-xs">(5% del prezzo + 0,70 €)</span>
+                            </div>
                           </div>
                         </div>
                       </CardContent>

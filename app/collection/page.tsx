@@ -23,6 +23,13 @@ export default function JapanCollectionPage() {
     }
   }, [collectionStartDate])
 
+  const currentCollection = {
+    name: "Giappone 2025",
+    totalWorks: 8,
+    available: 2,
+    endDate: "8 Dicembre 2025",
+  }
+
   const artworks = [
     {
       id: "JAP25-001",
@@ -67,13 +74,11 @@ export default function JapanCollectionPage() {
       <Header />
 
       <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-green-600 via-blue-600 to-gray-600 bg-clip-text text-transparent">
-            AUTUNNO 2025
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-grey-600 via-red-600 to-gray-600 bg-clip-text text-transparent">
+            {currentCollection.name}
           </h1>
-          {/* descrizione di una collezione che parla di autunno */} 
-          <p className="text-xl text-gray-600 mb-8">{`l'autunno attraverso opere di artisti esclusivi`}</p>
+          <p className="text-xl text-gray-600 mb-8">{`Il Giappone attraverso opere esclusive`}</p>
         </div>
 
         {isComingSoon ? (
@@ -84,7 +89,7 @@ export default function JapanCollectionPage() {
               </div>
               <h3 className="text-3xl font-black mb-4 uppercase">COLLEZIONE IN ARRIVO!</h3>
               <p className="text-xl text-black-700 mb-6">
-                La collezione Giappone sarà disponibile a partire dal{" "}
+                La collezione {currentCollection.name} sarà disponibile a partire dal{" "}
                 <span className="font-bold">
                   {collectionStartDate.toLocaleDateString("it-IT", {
                     day: "2-digit",

@@ -254,7 +254,7 @@ export default function VerifyPage() {
                   </div>
                   <h4 className="font-bold mb-2">Trova il Codice</h4>
                   <p className="text-gray-600 text-sm">
-                    Ogni opera ha un codice univoco stampato sulla placca sigillata
+                    Ogni opera ha un codice univoco stampato sul case protettivo
                   </p>
                 </div>
                 <div className="text-center">

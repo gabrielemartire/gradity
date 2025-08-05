@@ -14,6 +14,10 @@ import Footer from "@/app/footer"
 import Demo from "@/app/demo"
 import artworks_db from "@/db/artworks"
 
+import { useEffect } from "react"
+
+import { useSearchParams } from "next/navigation"
+
 export default function GalleryPage() {
   const [viewMode, setViewMode] = useState("grid")
   const [searchTerm, setSearchTerm] = useState("")
@@ -21,6 +25,48 @@ export default function GalleryPage() {
   const [filterCollection, setFilterCollection] = useState("all")
 
   const artworks = artworks_db
+
+  const searchParams = useSearchParams()
+  
+  // Mappa specifica per gli ID delle collezioni URL
+  const collectionMapping: Record<string, string> = {
+    'BRD25': 'Uccelli 2025',
+    'WLD25': 'Natura 2025'
+  }
+  
+  // Funzione per convertire l'ID URL in nome collezione
+  const urlIdToCollection = (urlId: string) => {
+    // Prima prova con la mappa specifica
+    if (collectionMapping[urlId]) {
+      return collectionMapping[urlId]
+    }
+    
+    // Fallback: cerca nelle collezioni esistenti
+    const uniqueCollections = [...new Set(artworks.map(artwork => artwork.collection))]
+    return uniqueCollections.find(collection => 
+      collection.toLowerCase().replace(/\s+/g, "-") === urlId.toLowerCase()
+    )
+  }
+
+  useEffect(() => {
+    const collectionParam = searchParams.get("collection")
+    if (collectionParam) {
+      console.log('URL param ricevuto:', collectionParam) // Debug
+      
+      // Converti l'ID URL nel nome della collezione
+      const matchingCollection = urlIdToCollection(collectionParam)
+      console.log('Collezione trovata:', matchingCollection) // Debug
+      
+      if (matchingCollection) {
+        setFilterCollection(matchingCollection)
+        console.log('Filtro impostato su:', matchingCollection) // Debug
+      } else {
+        console.warn(`Collezione non trovata per il parametro: ${collectionParam}`)
+        console.log('Collezioni disponibili:', [...new Set(artworks.map(artwork => artwork.collection))]) // Debug
+        setFilterCollection("all")
+      }
+    }
+  }, [searchParams, artworks]) // Includi artworks nelle dipendenze
 
   const filteredArtworks = artworks.filter((artwork) => {
     const matchesSearch =
@@ -32,6 +78,9 @@ export default function GalleryPage() {
 
     return matchesSearch && matchesStatus && matchesCollection
   })
+
+  // Ottieni le collezioni uniche per il dropdown
+  const uniqueCollections = [...new Set(artworks.map(artwork => artwork.collection))]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
@@ -72,8 +121,8 @@ export default function GalleryPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Tutti</SelectItem>
-                    <SelectItem value="available">Disponibili</SelectItem>
-                    <SelectItem value="sold">Vendute</SelectItem>
+                    <SelectItem value="available">● Disponibili</SelectItem>
+                    <SelectItem value="sold">○ Vendute</SelectItem>
                   </SelectContent>
                 </Select>
 
@@ -83,8 +132,11 @@ export default function GalleryPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Tutte</SelectItem>
-                    <SelectItem value="Uccelli 2025">Uccelli 2025</SelectItem>
-                    <SelectItem value="Natura 2025">Natura 2025</SelectItem>
+                    {uniqueCollections.map((collection) => (
+                      <SelectItem key={collection} value={collection}>
+                        {collection}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
 
@@ -117,6 +169,15 @@ export default function GalleryPage() {
         <div className="mb-6">
           <p className="text-gray-600">
             Mostrando {filteredArtworks.length} di {artworks.length} opere
+            {filterCollection !== "all" && (
+              <span className="ml-2 text-purple-600 font-medium">
+                - Collezione: {filterCollection}
+              </span>
+            )}
+          </p>
+          {/* Debug info - rimuovi in produzione */}
+          <p className="text-xs text-gray-400 mt-1">
+            Debug: filterCollection = "{filterCollection}" | URL param = "{searchParams.get("collection")}"
           </p>
         </div>
 

@@ -34,16 +34,16 @@ const Header = () => {
                 <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
                   <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 bg-gradient-to-r from-yellow-500 to-orange-600"></div>
-                    <Link href="/gallery?collection=EST-2025" className="group-hover:text-lg transition-all duration-200">
-                      Estate 2025
+                    <Link href="/gallery?collection=BRD25" className="group-hover:text-lg transition-all duration-200">
+                      Uccelli (2025)
                     </Link>
                   </div>
                 </li>
                 <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
                   <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-red-600"></div>
-                    <Link href="/gallery?collection=AUT-2025" className="group-hover:text-lg transition-all duration-200">
-                      Autunno 2025
+                    <div className="w-4 h-4 bg-gradient-to-r from-gray-500 to-green-600"></div>
+                    <Link href="/gallery?collection=WLD25" className="group-hover:text-lg transition-all duration-200">
+                      Natura (2025)
                     </Link>
                   </div>
                 </li>
@@ -57,22 +57,22 @@ const Header = () => {
                       Cyberpunk Special
                     </Link>
                   </div>
-                </li>*/}
+                </li>
                 <li className="flex items-center justify-between group hover:text-white transition-all duration-200">
                   <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-600"></div>
-                    {/* <Image
+                    <div className="w-4 h-4 bg-gradient-to-r from-white-500 to-red-600"></div>
+                    <Image
                       src="/collection_AUT2025.jpg"
                       alt="AUT25"
                       width={25}
                       height={25}
                       className="object-cover"
-                    /> */}
-                    <Link href="/gallery?collection=EST-2026" className="group-hover:text-lg transition-all duration-200">
-                      Estate 2026
+                    />
+                    <Link href="/gallery?collection=JPN25" className="group-hover:text-lg transition-all duration-200">
+                      Giappone (2025)
                     </Link>
                   </div>
-                </li> 
+                </li> */}
               </ul>
             </div>
             <div>
@@ -104,7 +104,7 @@ const Header = () => {
                 </li>
                 <li className="flex items-center justify-start group hover:text-white transition-all duration-200 gap-2">
                   <Link href="/plaque" className="group-hover:text-lg transition-all duration-200">
-                    la Placca
+                    il Case Protettivo
                   </Link>
                   <Vault className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </li>
@@ -147,7 +147,12 @@ const Header = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 gradity.it</p>
+            <p>
+              <Link href="/terms" target="_blank" className="group-hover:text-lg transition-all duration-200 mr-2 underline">
+                Informativa sulla Privacy
+              </Link>
+              &copy; gradity.it 2025
+            </p>
           </div>
         </div>
       </footer>

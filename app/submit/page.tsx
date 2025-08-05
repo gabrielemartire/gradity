@@ -9,7 +9,7 @@ import Footer from "@/app/footer"
 
 export default function SubmitPage() {
   const currentSeason = {
-    name: "Autunno 2025",
+    name: "Giappone 2025",
     maxSubmissions: 3,
     userSubmissions: 3,
     deadline: "30 Novembre 2025",
@@ -17,8 +17,8 @@ export default function SubmitPage() {
   }
 
   const nextSeason = {
-    name: "Primavera 2026",
-    opensOn: "24 Maggio 2026",
+    name: "Pirati",
+    opensOn: "02 Marzo 2026",
   }
 
   return (

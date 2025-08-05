@@ -14,9 +14,9 @@ export default function PlaquePage() {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
-            LA
+            il 
             <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">PLACCA</span>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Case Protettivo</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
             Il sistema di certificazione più avanzato per arte contemporanea. Ogni opera è sigillata, protetta e
@@ -71,7 +71,7 @@ export default function PlaquePage() {
                   <div className="bg-gray-100 p-8 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     <img
                       src="twinpeaks.png"
-                      alt="Placca sigillata"
+                      alt="CaseTwinPeaks"
                       width={400}
                       height={400}
                       className="w-full h-auto"
@@ -207,9 +207,9 @@ export default function PlaquePage() {
 
         {/* CTA */}
         <div className="text-center mt-20">
-          <h2 className="text-4xl font-black mb-8 uppercase">Verifica una Placca</h2>
+          <h2 className="text-4xl font-black mb-8 uppercase">Verifica Opera</h2>
           <p className="text-xl text-gray-600 mb-8 font-medium">
-            Hai una placca <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span>? Verifica immediatamente la sua autenticità
+            Hai un Case Protettivo <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span>? Verifica immediatamente la sua autenticità
           </p>
           <Link href="/verify">
             <Button
