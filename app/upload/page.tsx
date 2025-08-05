@@ -289,7 +289,7 @@ export default function UploadPage() {
                                   <Info className="w-3 sm:w-4 h-3 sm:h-4 ml-2 font-bold text-purple-600 cursor-pointer" />
                                 </PopoverTrigger>
                                 <PopoverContent className="w-64 text-sm p-2">
-                                  gradity si occupa della certificazione e sigillatura dell'opera, garantendo la massima cura dell'opera.
+                                  {`gradity si occupa della certificazione e sigillatura dell'opera, garantendo la massima cura dell'opera.`}
                                 </PopoverContent>
                               </Popover>
                             </div>
@@ -306,7 +306,7 @@ export default function UploadPage() {
                                     <Info className="w-3 sm:w-4 h-3 sm:h-4 ml-2 font-bold text-purple-600 cursor-pointer" />
                                   </PopoverTrigger>
                                   <PopoverContent className="w-64 text-sm p-2">
-                                    gradity offre un'assicurazione sulla vendita per tutelare l'artista.
+                                    {`gradity offre un'assicurazione sulla vendita per tutelare l'artista.`}
                                   </PopoverContent>
                                 </Popover>
                             </div>                            

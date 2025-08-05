@@ -175,10 +175,6 @@ export default function GalleryPage() {
               </span>
             )}
           </p>
-          {/* Debug info - rimuovi in produzione */}
-          <p className="text-xs text-gray-400 mt-1">
-            Debug: filterCollection = "{filterCollection}" | URL param = "{searchParams.get("collection")}"
-          </p>
         </div>
 
         {/* Artworks Grid/List */}

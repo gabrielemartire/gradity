@@ -13,8 +13,8 @@ export default function PrivacyPage() {
         </CardHeader>
         <CardContent className="space-y-4 text-gray-700">
           <p>
-            Benvenuto su Gradity! Questi termini e condizioni delineano le regole e i regolamenti per l'uso
-            del sito web di gradity, situato all'indirizzo gradity.it.
+            {`Benvenuto su Gradity! Questi termini e condizioni delineano le regole e i regolamenti per l'uso
+            del sito web di gradity, situato all'indirizzo gradity.it.`}
           </p>
           <p>
             Accedendo a questo sito web, assumiamo che tu accetti questi termini e condizioni. Non continuare a
@@ -64,8 +64,8 @@ export default function PrivacyPage() {
 
           <h2 className="text-2xl font-semibold mt-6">Disclaimer</h2>
           <p>
-            Nella misura massima consentita dalla legge applicabile, escludiamo tutte le dichiarazioni, garanzie e
-            condizioni relative al nostro sito web e all'uso di questo sito web. Nulla in questo disclaimer:
+            {`Nella misura massima consentita dalla legge applicabile, escludiamo tutte le dichiarazioni, garanzie e
+            condizioni relative al nostro sito web e all'uso di questo sito web. Nulla in questo disclaimer:`}
           </p>
           <ul className="list-disc list-inside ml-4">
             <li>Limiterà o escluderà la nostra o la tua responsabilità per morte o lesioni personali;</li>
