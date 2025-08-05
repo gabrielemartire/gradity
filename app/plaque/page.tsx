@@ -14,9 +14,7 @@ export default function PlaquePage() {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
-            il 
-            <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Case Protettivo</span>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent p-2">IL CASE PROTETTIVO</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
             Il sistema di certificazione più avanzato per arte contemporanea. Ogni opera è sigillata, protetta e

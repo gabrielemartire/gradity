@@ -32,7 +32,7 @@ export default function SubmitPage() {
             <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
               PROPONI
               <br />
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">OPERA</span>
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent p-2">OPERA</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-medium">
               Sottoponi le tue opere per essere selezionato nelle nostre collezioni esclusive

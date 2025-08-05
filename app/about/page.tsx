@@ -68,9 +68,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
-            CHI
-            <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">SIAMO</span>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent p-2">CHI SIAMO</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed">
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Gradity</span> è la prima piattaforma che certifica e preserva arte pop attraverso un sistema di
@@ -197,7 +195,7 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center pb-4 mt-12"><h4 className="text-2xl font-black mb-4 uppercase">Team Creativo</h4></div>
+            <div className="text-center pb-4 mt-16"><h4 className="text-3xl font-black mb-4 uppercase">Team Creativo</h4></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {creativeTeam.map((member, index) => (
                 <div key={index} className="text-center">
