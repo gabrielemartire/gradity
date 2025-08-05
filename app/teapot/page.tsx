@@ -1,4 +1,3 @@
-import { Palette } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,9 +8,7 @@ import Footer from "@/app/footer"
 export default function TeapotPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
-      {/* Header */}
       <Header />
-
 
       <div className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-[calc(100vh-120px)]">
         <Card className="max-w-2xl w-full border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white/80 backdrop-blur-sm">
@@ -28,7 +25,7 @@ export default function TeapotPage() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <h2 className="text-3xl font-black text-gray-800 uppercase">I'm a teapot!</h2>
+            <h2 className="text-3xl font-black text-gray-800 uppercase">Here a teapot!</h2>
             <p className="text-lg text-gray-700 font-medium leading-relaxed">
               Questo server è una teiera e si rifiuta di preparare il caffè perché è, permanentemente, una teiera. Forse
               dovresti provare a richiedere del tè invece?
