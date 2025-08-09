@@ -14,8 +14,8 @@ import Link from "next/link"
 export default function UploadPage() {
 
   const cardSpecs = {
-    width: 63, // mm
-    height: 88, // mm
+    width: 65, // mm
+    height: 90, // mm
     widthPx: 744, // px at 300 DPI
     heightPx: 1039, // px at 300 DPI
     ratio: 63 / 88,
@@ -51,17 +51,17 @@ export default function UploadPage() {
                     <div className="bg-black text-white p-4">
                       <h4 className="font-black mb-2 uppercase text-sm sm:text-base">Le Dimensioni</h4>
                       <p className="text-base sm:text-lg">{cardSpecs.width}mm × {cardSpecs.height}mm</p>
-                      <p className="text-xs sm:text-sm opacity-80">Identiche alle carte da gioco collezionabili</p>
+                      <p className="text-xs sm:text-sm opacity-80">Dimensione massima compatibile con il case protettivo</p>
                     </div>
                     <div className="bg-gray-100 p-4 border-2 border-black">
                       <h4 className="font-black mb-2 uppercase text-sm sm:text-base">La tela</h4>
                       <p className="text-base sm:text-lg">{`Puoi dipingere su qualsiasi supporto`}</p>
-                      <p className="text-xs sm:text-sm text-gray-600">{`tela da pittura, cartoncino, foglio della stampante, carta fotografica`}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{`tela da pittura, cartoncino, foglio della stampante, foglio di plastica, carta fotografica`}</p>
                     </div>
                     <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 border-2 border-black">
                       <h4 className="font-black mb-2 uppercase text-sm sm:text-base">La tecnica</h4>
                       <p className="text-base sm:text-lg">{`Puoi usare qualsiasi tecnica`}</p>
-                      <p className="text-xs sm:text-sm text-gray-600">{`acquerello, inchiostro, matita, pastelli, acrilico, olio, collage, mista`}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{`acquerello, inchiostro, matita, pastelli, acrilico, olio, mista`}</p>
                     </div>
                   </div>
                 </div>

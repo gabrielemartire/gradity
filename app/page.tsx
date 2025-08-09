@@ -25,7 +25,7 @@ export default function HomePage() {
     endDate: "8 Dicembre 2025",
   }
 
-  const featuredWorks = artworks_db.filter((work) => work.status === "sold").sort(() => 0.5 - Math.random()).slice(0, 4)
+  const featuredWorks = artworks_db.filter((work) => work.status === "sold").sort(() => 0.5 - Math.random()).slice(0, 3)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-cyan-100">
@@ -93,7 +93,7 @@ export default function HomePage() {
       {/* Collection coming soon */}
       <section className="mb-12 mx-4 md:mx-24 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
         <div className="p-4 md:p-8 bg-gradient-to-r from-purple-600 to-pink-600">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+          <div className="flex flex-col xl:flex-row items-center justify-around gap-6 md:gap-8">
             <div className="relative w-64 md:w-96 h-64 md:h-96 flex items-center justify-center overflow-hidden rounded-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
               <Image
                 src="/collection_AUT2025.jpg"
@@ -111,11 +111,18 @@ export default function HomePage() {
               <p className="text-base md:text-xl opacity-90 max-w-xl mx-auto px-4 md:px-0">
                 {`Un'esplosione di arte ispirata al Giappone, con opere uniche e certificate.`}
               </p>
-              <Link href="/collection">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 w-full md:w-auto">
-                  Esplora la Nuova Collezione
-                </Button>
-              </Link>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+                <Link href="/collection">
+                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 w-full md:w-auto">
+                    Esplora la Nuova Collezione
+                  </Button>
+                </Link>
+                <Link href="/submit">
+                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 w-full md:w-auto">
+                    Proponi la tua opera
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -128,7 +135,7 @@ export default function HomePage() {
           <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
             Opere di precedenti collezioni
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {featuredWorks.map((work) => (
               <Card
                 key={work.id}

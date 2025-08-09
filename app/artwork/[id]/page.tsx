@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Share2, Heart, ShoppingCart } from "lucide-react"
+import { Share2, Heart, ShoppingCart, RotateCcw, FileSignature, ZoomIn } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import artworks_db from "@/db/artworks"
@@ -24,6 +24,9 @@ export default function ArtworkPage({ params }: PageProps) {
   const imageRef = useRef<HTMLDivElement>(null)
   const [artworkId, setArtworkId] = useState<string>("")
   const [isLoading, setIsLoading] = useState(true)
+  const [isFlipped, setIsFlipped] = useState(false)
+  const [viewMode, setViewMode] = useState<'front' | 'back' | 'signature' | 'detail'>('front')
+  const [isAnimating, setIsAnimating] = useState(false)
 
   // Resolve the params Promise
   useEffect(() => {
@@ -36,7 +39,6 @@ export default function ArtworkPage({ params }: PageProps) {
   }, [params])
 
   // Artworks database
-
   const artworks = artworks_db
 
   // Show loading state while resolving params
@@ -86,7 +88,7 @@ export default function ArtworkPage({ params }: PageProps) {
   const artistInfo = getArtistInfo(artwork.artist)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!imageRef.current) return
+    if (!imageRef.current || isAnimating) return
 
     const rect = imageRef.current.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -98,12 +100,41 @@ export default function ArtworkPage({ params }: PageProps) {
     const rotateX = (y - centerY) / 10
     const rotateY = (centerX - x) / 10
 
-    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`
+    imageRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05) ${isFlipped ? 'rotateY(180deg)' : ''}`
   }
 
   const handleMouseLeave = () => {
-    if (!imageRef.current) return
-    imageRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
+    if (!imageRef.current || isAnimating) return
+    imageRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) ${isFlipped ? 'rotateY(180deg)' : ''}`
+  }
+
+  const handleViewChange = (newView: 'front' | 'back' | 'signature' | 'detail') => {
+    if (isAnimating || viewMode === newView) return
+    
+    setIsAnimating(true)
+    
+    if (newView === 'back' || (viewMode === 'back')) {
+      setIsFlipped(!isFlipped)
+    }
+    
+    // Smooth transition with scale animation
+    if (imageRef.current) {
+      imageRef.current.style.transition = 'transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)'
+      imageRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(${newView === 'back' ? '180deg' : '0deg'}) scale3d(0.95, 0.95, 0.95)`
+    }
+
+    setTimeout(() => {
+      setViewMode(newView)
+      if (imageRef.current) {
+        imageRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(${newView === 'back' ? '180deg' : '0deg'}) scale3d(1, 1, 1)`
+      }
+      setTimeout(() => {
+        if (imageRef.current) {
+          imageRef.current.style.transition = 'transform 0.2s ease-out'
+        }
+        setIsAnimating(false)
+      }, 100)
+    }, 300)
   }
 
   const handleShare = () => {
@@ -119,18 +150,18 @@ export default function ArtworkPage({ params }: PageProps) {
     }
   }
 
-  // const getStatusText = (status: string) => {
-  //   switch (status) {
-  //     case 'available':
-  //       return 'Disponibile'
-  //     case 'sold':
-  //       return 'Venduto'
-  //     case 'auction':
-  //       return 'All\'asta'
-  //     default:
-  //       return 'Non disponibile'
-  //   }
-  // }
+  const getImageSrc = () => {
+    switch (viewMode) {
+      case 'back':
+        return artwork.backImage || artwork.image || "/placeholder.svg"
+      case 'signature':
+        return artwork.signatureImage || artwork.image || "/placeholder.svg"
+      case 'detail':
+        return artwork.detailImage || artwork.image || "/placeholder.svg"
+      default:
+        return artwork.image || "/placeholder.svg"
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,59 +172,103 @@ export default function ArtworkPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Artwork Image with Parallax Effect */}
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center">
+              {/* View Control Buttons */}
+              <div className="flex gap-3 mb-8">
+                <Button
+                  variant={viewMode === 'front' ? "default" : "outline"}
+                  onClick={() => handleViewChange('front')}
+                  className={`font-bold uppercase px-6 py-3 border-2 border-black ${
+                    viewMode === 'front' 
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                      : 'bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                  } transition-all duration-200`}
+                  disabled={isAnimating}
+                >
+                  <RotateCcw className="w-4 h-4 mr-2" />
+                  Fronte
+                </Button>
+                
+                {/* <Button
+                  variant={viewMode === 'back' ? "default" : "outline"}
+                  onClick={() => handleViewChange('back')}
+                  className={`font-bold uppercase px-6 py-3 border-2 border-black ${
+                    viewMode === 'back' 
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                      : 'bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                  } transition-all duration-200`}
+                  disabled={isAnimating}
+                >
+                  <RotateCcw className="w-4 h-4 mr-2 transform rotate-180" />
+                  Retro
+                </Button> */}
+                
+                <Button
+                  variant={viewMode === 'signature' ? "default" : "outline"}
+                  onClick={() => handleViewChange('signature')}
+                  className={`font-bold uppercase px-6 py-3 border-2 border-black ${
+                    viewMode === 'signature' 
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                      : 'bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                  } transition-all duration-200`}
+                  disabled={isAnimating}
+                >
+                  <FileSignature className="w-4 h-4 mr-2" />
+                  Firma
+                </Button>
+                
+                <Button
+                  variant={viewMode === 'detail' ? "default" : "outline"}
+                  onClick={() => handleViewChange('detail')}
+                  className={`font-bold uppercase px-6 py-3 border-2 border-black ${
+                    viewMode === 'detail' 
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                      : 'bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                  } transition-all duration-200`}
+                  disabled={isAnimating}
+                >
+                  <ZoomIn className="w-4 h-4 mr-2" />
+                  Dettaglio
+                </Button>
+              </div>
+
               <div className="relative">
                 <div
                   ref={imageRef}
                   className="transition-transform duration-200 ease-out cursor-pointer"
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
-                  style={{ transformStyle: "preserve-3d" }}
+                  style={{ 
+                    transformStyle: "preserve-3d",
+                    transform: isFlipped ? 'perspective(1000px) rotateY(180deg)' : 'perspective(1000px)'
+                  }}
                 >
                   <Image
-                    src={artwork.image || "/placeholder.svg"}
-                    alt={artwork.title}
+                    src={getImageSrc()}
+                    alt={`${artwork.title} - ${viewMode}`}
                     width={450}
                     height={630}
-                    className="w-full h-96 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-white object-cover object-center"
+                    className="w-full h-130 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-white object-cover object-center"
                     priority
+                    style={{
+                      transform: viewMode === 'back' ? 'scaleX(-1)' : 'scaleX(1)'
+                    }}
                   />
                   {/* Card reflection effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10 pointer-events-none"></div>
-                </div>
-
-                {/* Status indicator */}
-                <div className="absolute top-6 right-6">
-                  {artwork.status === "available" && (
-                    <div className="w-12 h-12 bg-green-400 border-4 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                      <span className="text-black font-black text-2xl">●</span>
-                    </div>
-                  )}
-                  {artwork.status === "sold" && (
-                    <div className="w-12 h-12 bg-red-400 border-4 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                      <span className="text-black font-black text-2xl">○</span>
-                    </div>
-                  )}
-                  {artwork.status === "auction" && (
-                    <div className="w-12 h-12 bg-yellow-400 border-4 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                      <span className="text-black font-black text-2xl">⚡</span>
+                  
+                  {/* Loading overlay during animation */}
+                  {isAnimating && (
+                    <div className="absolute inset-0 bg-white/80 flex items-center justify-center border-4 border-black">
+                      <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600"></div>
                     </div>
                   )}
                 </div>
-
-                {/* Code badge */}
-                <div className="absolute top-6 left-6">
-                  <Badge
-                    variant="outline"
-                    className="bg-white/95 text-gray-700 font-mono text-lg px-4 py-2 border-2 border-black"
-                  >
-                    {artwork.id}
-                  </Badge>
-                </div>
-              </div>
+              </div>              
             </div>
 
             {/* Artwork Details */}
+            
             <div className="space-y-8">
               {/* Title and Artist */}
               <div>
@@ -215,7 +290,7 @@ export default function ArtworkPage({ params }: PageProps) {
                     </div>
                   </div>
                 </Link>
-                <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg px-4 py-2">
+                <Badge className="bg-gradient-to-r from-gray-900 to-rose-300 text-white text-lg px-4 py-2">
                   {artwork.collection}
                 </Badge>
               </div>
@@ -245,19 +320,9 @@ export default function ArtworkPage({ params }: PageProps) {
                       </Button>
                     </Link>
                   )}
-                  <Button
-                    variant="outline"
-                    className={`border-2 border-black bg-transparent px-6 bg-red-50 text-red-600"`}
-                  >
-                    <Heart className={`w-5 h-5 fill-current"`} />
-                  </Button>
-                  <Button variant="outline" onClick={handleShare} className="border-2 border-black bg-transparent px-6">
+                  <Button variant="outline" onClick={handleShare} className="border-2 border-black bg-transparent px-28 cursor-pointer">
                     <Share2 className="w-5 h-5" />
                   </Button>
-                </div>
-                <div className="flex items-center justify-between text-sm text-gray-600">
-                  {/* <span>{artwork.likes} likes</span> */}
-                  <span>SERIAL: {artwork.serial}</span>
                 </div>
               </div>
 
@@ -295,7 +360,16 @@ export default function ArtworkPage({ params }: PageProps) {
               {/* Tags */}
               <div>
                 <h3 className="text-2xl font-black mb-4 uppercase">Tag</h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="border-2 border-indigo-800 text-indigo-800 font-bold bg-indigo-100 mr-2">
+                    {artwork.serial}
+                  </Badge>
+                  <Badge className="border-2 border-indigo-800 text-indigo-800 font-bold bg-indigo-100 mr-2">
+                    {artwork.id}
+                  </Badge>
+                  <Badge className="border-2 border-indigo-800 text-indigo-800 font-bold bg-indigo-100">
+                    {artwork.collection}
+                  </Badge>
                   {artwork.tags.map((tag, index) => (
                     <Badge
                       key={index}
